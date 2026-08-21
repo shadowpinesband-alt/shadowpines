@@ -6,184 +6,1122 @@
 <meta name="theme-color" content="#08050d">
 <meta name="description" content="Página oficial do artista — música, vídeos, streaming e contactos.">
 <title>SEU NOME — Artista</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --bg:#050505;--panel:rgba(255,255,255,.055);--panel2:rgba(255,255,255,.085);
-  --line:rgba(255,255,255,.16);--text:#fff;--muted:#aaa5b1;
-  --purple:#9b35ff;--purple2:#6f19d8;--max:1180px;
+  --bg:#050505;
+  --panel:rgba(255,255,255,.055);
+  --panel2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.16);
+  --text:#fff;
+  --muted:#aaa5b1;
+  --purple:#9b35ff;
+  --purple2:#6f19d8;
+  --max:1180px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
 body:before{
-  content:"";position:fixed;inset:0;z-index:-2;
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
   background:
-  radial-gradient(circle at 68% 12%,rgba(146,42,255,.20),transparent 28%),
-  radial-gradient(circle at 15% 30%,rgba(92,24,170,.12),transparent 30%),
-  linear-gradient(180deg,#080609 0%,#030303 75%);
+    radial-gradient(circle at 68% 12%,rgba(146,42,255,.20),transparent 28%),
+    radial-gradient(circle at 15% 30%,rgba(92,24,170,.12),transparent 30%),
+    linear-gradient(180deg,#080609 0%,#030303 75%);
 }
+
 body:after{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.16;
-  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 75%);
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.16;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:linear-gradient(to bottom,black,transparent 75%);
 }
-.container{width:min(calc(100% - 48px),var(--max));margin:auto}
-.hero{min-height:650px;display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center;padding:42px 0 55px}
-.eyebrow,.section-kicker{font-size:11px;letter-spacing:.28em;color:#ddd;text-transform:uppercase;font-weight:700}
-h1{font-size:clamp(54px,7vw,96px);line-height:.85;letter-spacing:-.065em;margin:18px 0 5px;font-weight:800}
-.signature{font-family:cursive;font-size:clamp(38px,5vw,62px);color:#a63cff;transform:rotate(-5deg);display:block;margin:3px 0 25px}
-.bio{max-width:470px;color:#ddd;line-height:1.65;font-size:15px}
-.socials{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.socials a{width:47px;height:47px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:white;text-decoration:none;background:rgba(255,255,255,.035);font-weight:800;transition:.25s}
-.socials a:hover{border-color:#a63cff;box-shadow:0 0 25px rgba(155,53,255,.3);transform:translateY(-3px)}
-.hero-video{position:relative;border:1px solid rgba(183,91,255,.65);border-radius:17px;overflow:hidden;background:#000;box-shadow:0 0 55px rgba(126,24,210,.16)}
-.hero-video:before{content:"";position:absolute;inset:0;box-shadow:inset 0 0 35px rgba(171,68,255,.2);pointer-events:none;z-index:2}
-.video-ratio{position:relative;aspect-ratio:16/9}
-.video-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video-label{text-align:center;color:#b7b1bb;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:15px 0 3px}
-.video-label span{color:#a63cff}
-.section{text-align:center;padding:35px 0 25px}
-.section-title{font-size:25px;letter-spacing:.18em;font-weight:700;margin:9px 0;text-transform:uppercase}
-.section-sub{color:#aaa;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
-.stream-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:25px}
+
+.container{
+  width:min(calc(100% - 48px),var(--max));
+  margin:auto;
+}
+
+/* HERO */
+
+.hero{
+  min-height:650px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:65px;
+  align-items:center;
+  padding:42px 0 55px;
+}
+
+.hero-copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.eyebrow,
+.section-kicker{
+  font-size:11px;
+  letter-spacing:.28em;
+  color:#ddd;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+/* FOTO DO ARTISTA */
+
+.artist-photo{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid var(--purple);
+  box-shadow:
+    0 0 25px rgba(155,53,255,.30),
+    0 0 60px rgba(155,53,255,.15);
+  margin-bottom:25px;
+  display:block;
+}
+
+h1{
+  font-size:clamp(54px,7vw,96px);
+  line-height:.85;
+  letter-spacing:-.065em;
+  margin:18px 0 5px;
+  font-weight:800;
+}
+
+.signature{
+  font-family:cursive;
+  font-size:clamp(38px,5vw,62px);
+  color:#a63cff;
+  transform:rotate(-5deg);
+  display:block;
+  margin:3px 0 25px;
+}
+
+.bio{
+  max-width:470px;
+  color:#ddd;
+  line-height:1.65;
+  font-size:15px;
+}
+
+.socials{
+  display:flex;
+  gap:12px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.socials a{
+  width:47px;
+  height:47px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:white;
+  text-decoration:none;
+  background:rgba(255,255,255,.035);
+  font-weight:800;
+  transition:.25s;
+}
+
+.socials a:hover{
+  border-color:#a63cff;
+  box-shadow:0 0 25px rgba(155,53,255,.3);
+  transform:translateY(-3px);
+}
+
+/* VIDEO */
+
+.hero-video{
+  position:relative;
+  border:1px solid rgba(183,91,255,.65);
+  border-radius:17px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 0 55px rgba(126,24,210,.16);
+}
+
+.hero-video:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  box-shadow:inset 0 0 35px rgba(171,68,255,.2);
+  pointer-events:none;
+  z-index:2;
+}
+
+.video-ratio{
+  position:relative;
+  aspect-ratio:16/9;
+}
+
+.video-ratio iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.video-label{
+  text-align:center;
+  color:#b7b1bb;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:15px 0 3px;
+}
+
+.video-label span{
+  color:#a63cff;
+}
+
+/* SEÇÕES */
+
+.section{
+  text-align:center;
+  padding:35px 0 25px;
+}
+
+.section-title{
+  font-size:25px;
+  letter-spacing:.18em;
+  font-weight:700;
+  margin:9px 0;
+  text-transform:uppercase;
+}
+
+.section-sub{
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+/* STREAMING */
+
+.stream-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:25px;
+}
+
 .stream{
-  min-height:74px;display:flex;align-items:center;gap:14px;padding:12px 16px;
-  border:1px solid var(--line);border-radius:12px;color:#fff;text-decoration:none;
-  background:rgba(255,255,255,.035);transition:.25s;position:relative;overflow:hidden
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 16px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,.035);
+  transition:.25s;
+  position:relative;
+  overflow:hidden;
 }
-.stream:after{content:"";position:absolute;inset:auto 0 0;height:2px;background:linear-gradient(90deg,transparent,#9b35ff,transparent);transform:translateX(-100%);transition:.35s}
-.stream:hover{background:var(--panel2);transform:translateY(-3px);border-color:#70408f}
-.stream:hover:after{transform:translateX(0)}
-.platform-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:800;background:#111;border:1px solid #333}
-.stream strong{font-size:14px}.stream small{display:block;color:#999;margin-top:3px;font-size:10px}
-.arrow{margin-left:auto;color:#aaa;font-size:24px}
+
+.stream:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#9b35ff,transparent);
+  transform:translateX(-100%);
+  transition:.35s;
+}
+
+.stream:hover{
+  background:var(--panel2);
+  transform:translateY(-3px);
+  border-color:#70408f;
+}
+
+.stream:hover:after{
+  transform:translateX(0);
+}
+
+.platform-icon{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  background:#111;
+  border:1px solid #333;
+}
+
+.stream strong{
+  font-size:14px;
+}
+
+.stream small{
+  display:block;
+  color:#999;
+  margin-top:3px;
+  font-size:10px;
+}
+
+.arrow{
+  margin-left:auto;
+  color:#aaa;
+  font-size:24px;
+}
+
+/* LANÇAMENTO */
+
 .release{
-  margin:20px 0 55px;padding:24px;display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center;
-  border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,rgba(91,26,129,.25),rgba(255,255,255,.025));
-  box-shadow:0 20px 70px rgba(0,0,0,.3)
+  margin:20px 0 55px;
+  padding:24px;
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:35px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(91,26,129,.25),
+      rgba(255,255,255,.025)
+    );
+  box-shadow:0 20px 70px rgba(0,0,0,.3);
 }
-.cover{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#17121c}
-.release-copy{text-align:left}.release-copy .section-kicker{color:#b66cff}
-.release h2{font-size:42px;letter-spacing:.12em;margin:14px 0 10px}
-.release p{color:#aaa;line-height:1.6}
-.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:10px;text-decoration:none;color:#fff;border:1px solid var(--line);font-size:11px;font-weight:800;letter-spacing:.1em}
-.btn.primary{border:0;background:linear-gradient(135deg,#a638ff,#6818cf);box-shadow:0 12px 35px rgba(130,28,225,.28)}
-.shows{margin:0 0 25px;border:1px solid var(--line);border-radius:15px;padding:24px;display:flex;gap:25px;align-items:center;background:var(--panel)}
-.show-icon{font-size:28px}.shows strong{font-size:16px}.shows span{display:block;color:#999;margin-top:5px;font-size:13px}
-.contact{margin:20px 0 50px;padding:25px;border:1px solid #8d28e7;border-radius:15px;background:linear-gradient(90deg,rgba(104,19,151,.24),rgba(24,6,38,.25));display:flex;align-items:center;justify-content:space-between;gap:25px}
-.contact h3{margin:6px 0 0;font-size:24px;letter-spacing:.12em}.contact .section-kicker{color:#bd73ff}
-footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 0 35px;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.logo{font-family:cursive;color:#fff;font-size:28px;text-transform:none;letter-spacing:0}
-.top{position:fixed;right:25px;bottom:25px;width:48px;height:48px;border:1px solid var(--line);background:#080808cc;color:#fff;border-radius:50%;cursor:pointer;backdrop-filter:blur(10px)}
-.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.fade.show{opacity:1;transform:none}
+
+.cover{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:12px;
+  background:#17121c;
+}
+
+.release-copy{
+  text-align:left;
+}
+
+.release-copy .section-kicker{
+  color:#b66cff;
+}
+
+.release h2{
+  font-size:42px;
+  letter-spacing:.12em;
+  margin:14px 0 10px;
+}
+
+.release p{
+  color:#aaa;
+  line-height:1.6;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid var(--line);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+
+.btn.primary{
+  border:0;
+  background:linear-gradient(135deg,#a638ff,#6818cf);
+  box-shadow:0 12px 35px rgba(130,28,225,.28);
+}
+
+/* SHOWS */
+
+.shows{
+  margin:0 0 25px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:24px;
+  display:flex;
+  gap:25px;
+  align-items:center;
+  background:var(--panel);
+}
+
+.show-icon{
+  font-size:28px;
+}
+
+.shows strong{
+  font-size:16px;
+}
+
+.shows span{
+  display:block;
+  color:#999;
+  margin-top:5px;
+  font-size:13px;
+}
+
+/* CONTACTO */
+
+.contact{
+  margin:20px 0 50px;
+  padding:25px;
+  border:1px solid #8d28e7;
+  border-radius:15px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(104,19,151,.24),
+      rgba(24,6,38,.25)
+    );
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.contact h3{
+  margin:6px 0 0;
+  font-size:24px;
+  letter-spacing:.12em;
+}
+
+.contact .section-kicker{
+  color:#bd73ff;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:30px 0 35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#777;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.logo{
+  font-family:cursive;
+  color:#fff;
+  font-size:28px;
+  text-transform:none;
+  letter-spacing:0;
+}
+
+/* BOTÃO TOPO */
+
+.top{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:48px;
+  height:48px;
+  border:1px solid var(--line);
+  background:#080808cc;
+  color:#fff;
+  border-radius:50%;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+}
+
+/* ANIMAÇÃO */
+
+.fade{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s,transform .7s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* TABLET */
+
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:35px;min-height:auto;padding-top:35px}
-  .hero-copy{text-align:center}.bio{margin-left:auto;margin-right:auto}.socials{justify-content:center}
-  .stream-grid{grid-template-columns:repeat(2,1fr)}.release{grid-template-columns:220px 1fr}
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:35px;
+    min-height:auto;
+    padding-top:35px;
+  }
+
+  .hero-copy{
+    text-align:center;
+    align-items:center;
+  }
+
+  .bio{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .socials{
+    justify-content:center;
+  }
+
+  .stream-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .release{
+    grid-template-columns:220px 1fr;
+  }
 }
+
+/* TELEMÓVEL */
+
 @media(max-width:600px){
-  .container{width:min(calc(100% - 28px),520px)}
-  .hero{padding-top:25px}.eyebrow{font-size:9px}h1{font-size:54px}.signature{font-size:40px}
-  .stream-grid{grid-template-columns:1fr}.release{grid-template-columns:1fr;padding:15px}.cover{max-width:300px;margin:auto}.release-copy{text-align:center}.buttons{justify-content:center}
-  .contact{display:block;text-align:center}.contact .btn{margin-top:18px;width:100%}
-  footer{display:block;text-align:center}.logo{margin-bottom:14px}
+
+  .container{
+    width:min(calc(100% - 28px),520px);
+  }
+
+  .hero{
+    padding-top:25px;
+  }
+
+  .eyebrow{
+    font-size:9px;
+  }
+
+  .artist-photo{
+    width:120px;
+    height:120px;
+    margin-bottom:20px;
+  }
+
+  h1{
+    font-size:54px;
+  }
+
+  .signature{
+    font-size:40px;
+  }
+
+  .stream-grid{
+    grid-template-columns:1fr;
+  }
+
+  .release{
+    grid-template-columns:1fr;
+    padding:15px;
+  }
+
+  .cover{
+    max-width:300px;
+    margin:auto;
+  }
+
+  .release-copy{
+    text-align:center;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .contact{
+    display:block;
+    text-align:center;
+  }
+
+  .contact .btn{
+    margin-top:18px;
+    width:100%;
+  }
+
+  footer{
+    display:block;
+    text-align:center;
+  }
+
+  .logo{
+    margin-bottom:14px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <main>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-copy fade">
-        <div class="eyebrow">Bem-vindo ao mundo de</div>
-        <h1>SEU NOME</h1>
-        <span class="signature">Artista</span>
-        <p class="bio">Músicas que conectam sentimentos e contam histórias reais. Obrigado por apoiar a arte independente.</p>
-        <nav class="socials" aria-label="Redes sociais">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="TikTok">TT</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="X">X</a>
-          <a href="#" aria-label="Facebook">f</a>
-        </nav>
-      </div>
-      <div class="fade">
-        <div class="hero-video">
-          <div class="video-ratio">
-            <!-- COLOQUE AQUI O ID DO SEU VÍDEO -->
-            <!-- Ex.: https://www.youtube.com/watch?v=ABC123 -> VIDEO_ID = ABC123 -->
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&playsinline=1&rel=0"
-              title="SEU NOME - Official Music Video"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-label"><span>●</span> Vídeo oficial • assista agora</div>
-      </div>
-    </section>
 
-    <section class="section fade">
-      <div class="section-kicker">♪</div>
-      <div class="section-title">Ouça agora</div>
-      <div class="section-sub">Em todas as plataformas</div>
-      <div class="stream-grid">
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">S</div><div><strong>Spotify</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">♪</div><div><strong>Apple Music</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">▶</div><div><strong>YouTube Music</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">D</div><div><strong>Deezer</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">A</div><div><strong>Amazon Music</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">T</div><div><strong>TIDAL</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">SC</div><div><strong>SoundCloud</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-        <a class="stream" href="#" target="_blank" rel="noopener"><div class="platform-icon">AM</div><div><strong>Audiomack</strong><small>Ouvir agora</small></div><div class="arrow">›</div></a>
-      </div>
-    </section>
+<div class="container">
 
-    <section class="release fade">
-      <!-- SUBSTITUA release-cover.jpg PELA CAPA DA SUA MÚSICA -->
-      <img class="cover" src="release-cover.jpg" alt="Capa do novo lançamento">
-      <div class="release-copy">
-        <div class="section-kicker">Novo lançamento</div>
-        <h2>ALÉM DE MIM</h2>
-        <p>O novo single já está disponível em todas as plataformas. Escolha onde quer ouvir.</p>
-        <div class="buttons">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">◉ OUVIR NO SPOTIFY</a>
-          <a class="btn" href="#" target="_blank" rel="noopener"> APPLE MUSIC</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">▶ YOUTUBE</a>
-        </div>
-      </div>
-    </section>
+<!-- =========================
+     HERO / ARTISTA
+========================= -->
 
-    <section class="fade">
-      <div class="section" style="padding-top:0"><div class="section-kicker">Agenda</div><div class="section-title" style="font-size:18px">Próximos shows</div></div>
-      <div class="shows">
-        <div class="show-icon">▣</div>
-        <div><strong>Em breve</strong><span>Novas datas serão anunciadas. Acompanha-me nas redes sociais.</span></div>
-      </div>
-    </section>
+<section class="hero">
 
-    <section class="contact fade">
-      <div><div class="section-kicker">Para shows, parcerias e outros</div><h3>FALE COM A EQUIPE</h3></div>
-      <a class="btn primary" href="mailto:contacto@seudominio.com">✈ ENTRAR EM CONTACTO</a>
-    </section>
+  <div class="hero-copy fade">
 
-    <footer>
-      <div class="logo">Seu Nome</div>
-      <div>© 2026 SEU NOME · Todos os direitos reservados</div>
-    </footer>
+    <!-- FOTO DO ARTISTA -->
+    <!-- Coloque foto-artista.jpg na mesma pasta deste index.html -->
+
+    <img
+      class="artist-photo"
+      src="foto-artista.jpg"
+      alt="SEU NOME">
+
+    <div class="eyebrow">
+      Bem-vindo ao mundo de
+    </div>
+
+    <h1>
+      SEU NOME
+    </h1>
+
+    <span class="signature">
+      Artista
+    </span>
+
+    <p class="bio">
+      Músicas que conectam sentimentos e contam histórias reais.
+      Obrigado por apoiar a arte independente.
+    </p>
+
+    <!-- REDES SOCIAIS -->
+
+    <nav class="socials" aria-label="Redes sociais">
+
+      <a href="#" aria-label="Instagram">
+        IG
+      </a>
+
+      <a href="#" aria-label="TikTok">
+        TT
+      </a>
+
+      <a href="#" aria-label="YouTube">
+        YT
+      </a>
+
+      <a href="#" aria-label="X">
+        X
+      </a>
+
+      <a href="#" aria-label="Facebook">
+        f
+      </a>
+
+    </nav>
+
   </div>
+
+
+  <!-- =========================
+       VÍDEO
+  ========================= -->
+
+  <div class="fade">
+
+    <div class="hero-video">
+
+      <div class="video-ratio">
+
+        <!--
+        COLOQUE AQUI O ID DO SEU VÍDEO DO YOUTUBE.
+
+        Exemplo:
+        https://www.youtube.com/watch?v=ABC123
+
+        O ID seria:
+        ABC123
+
+        -->
+
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&playsinline=1&rel=0"
+          title="SEU NOME - Official Music Video"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </div>
+
+    <div class="video-label">
+      <span>●</span>
+      Vídeo oficial • assista agora
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PLATAFORMAS
+========================= -->
+
+<section class="section fade">
+
+  <div class="section-kicker">
+    ♪
+  </div>
+
+  <div class="section-title">
+    Ouça agora
+  </div>
+
+  <div class="section-sub">
+    Em todas as plataformas
+  </div>
+
+
+  <div class="stream-grid">
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        S
+      </div>
+
+      <div>
+        <strong>Spotify</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        ♪
+      </div>
+
+      <div>
+        <strong>Apple Music</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        ▶
+      </div>
+
+      <div>
+        <strong>YouTube Music</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        D
+      </div>
+
+      <div>
+        <strong>Deezer</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        A
+      </div>
+
+      <div>
+        <strong>Amazon Music</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        T
+      </div>
+
+      <div>
+        <strong>TIDAL</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        SC
+      </div>
+
+      <div>
+        <strong>SoundCloud</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <a
+      class="stream"
+      href="#"
+      target="_blank"
+      rel="noopener">
+
+      <div class="platform-icon">
+        AM
+      </div>
+
+      <div>
+        <strong>Audiomack</strong>
+        <small>Ouvir agora</small>
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     NOVO LANÇAMENTO
+========================= -->
+
+<section class="release fade">
+
+  <!--
+  Coloque a capa da música na mesma pasta
+  com o nome: release-cover.jpg
+  -->
+
+  <img
+    class="cover"
+    src="release-cover.jpg"
+    alt="Capa do novo lançamento">
+
+
+  <div class="release-copy">
+
+    <div class="section-kicker">
+      Novo lançamento
+    </div>
+
+    <h2>
+      ALÉM DE MIM
+    </h2>
+
+    <p>
+      O novo single já está disponível em todas as plataformas.
+      Escolha onde quer ouvir.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        class="btn primary"
+        href="#"
+        target="_blank"
+        rel="noopener">
+        ◉ OUVIR NO SPOTIFY
+      </a>
+
+      <a
+        class="btn"
+        href="#"
+        target="_blank"
+        rel="noopener">
+         APPLE MUSIC
+      </a>
+
+      <a
+        class="btn"
+        href="#"
+        target="_blank"
+        rel="noopener">
+        ▶ YOUTUBE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     AGENDA
+========================= -->
+
+<section class="fade">
+
+  <div
+    class="section"
+    style="padding-top:0">
+
+    <div class="section-kicker">
+      Agenda
+    </div>
+
+    <div
+      class="section-title"
+      style="font-size:18px">
+
+      Próximos shows
+
+    </div>
+
+  </div>
+
+
+  <div class="shows">
+
+    <div class="show-icon">
+      ▣
+    </div>
+
+    <div>
+
+      <strong>
+        Em breve
+      </strong>
+
+      <span>
+        Novas datas serão anunciadas.
+        Acompanha-me nas redes sociais.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact fade">
+
+  <div>
+
+    <div class="section-kicker">
+      Para shows, parcerias e outros
+    </div>
+
+    <h3>
+      FALE COM A EQUIPE
+    </h3>
+
+  </div>
+
+
+  <a
+    class="btn primary"
+    href="mailto:contacto@seudominio.com">
+
+    ✈ ENTRAR EM CONTACTO
+
+  </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="logo">
+    Seu Nome
+  </div>
+
+  <div>
+    © 2026 SEU NOME · Todos os direitos reservados
+  </div>
+
+</footer>
+
+</div>
+
 </main>
-<button class="top" id="top" aria-label="Voltar ao topo">⌃</button>
+
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+
+<button
+  class="top"
+  id="top"
+  aria-label="Voltar ao topo">
+
+  ⌃
+
+</button>
+
+
 <script>
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
-},{threshold:.12});
-document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
-document.getElementById('top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const observer = new IntersectionObserver(
+
+  entries => {
+
+    entries.forEach(e => {
+
+      if(e.isIntersecting){
+
+        e.target.classList.add('show');
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:.12
+  }
+
+);
+
+
+document
+  .querySelectorAll('.fade')
+  .forEach(el => observer.observe(el));
+
+
+document
+  .getElementById('top')
+  .addEventListener(
+    'click',
+    () => window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+  );
+
 </script>
+
 </body>
 </html>
