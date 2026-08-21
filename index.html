@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow Pines — Links</title>
+<meta name="description" content="All links, music and updates in one place.">
+
+<!-- ============================================================
+     HOW TO EDIT THIS PAGE
+     Everything you need to change (name, photos, links, colors)
+     lives in the <script id="config"> block near the end of the
+     file. You shouldn't need to touch anything else.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --sky-top:    #80868c;
+    --sky-bottom: #3a3f44;
+    --pine-back:  #56625d;
+    --pine-front: #161a18;
+    --sun:        #ecca92;
+    --sun-soft:   rgba(236,202,146,0.32);
+    --gold:       #c9a869;   /* muted professional accent, used sparingly */
+    --paper:      #eef1ee;
+    --paper-dim:  #9ea6a1;
+    --line:       rgba(238,241,238,0.18);
+    --card:       rgba(19,23,21,0.5);
+    --radius:     4px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    min-height:100vh;
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 62%, #2c3033 100%);
+    display:flex;
+    justify-content:center;
+    padding:56px 16px 90px;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* ---------- Backdrop: fog, sun, pine ridgelines, print grain ---------- */
+  .scene{ position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none; }
+  .sun{
+    position:absolute; top:6%; left:50%; width:230px; height:230px;
+    transform:translateX(-50%); border-radius:50%;
+    background:radial-gradient(circle, var(--sun) 0%, var(--sun-soft) 42%, transparent 72%);
+    filter:blur(2px); opacity:0.85;
+  }
+  .fog{
+    position:absolute; left:-10%; width:120%; height:180px;
+    background:linear-gradient(180deg, rgba(238,241,238,0.20), rgba(238,241,238,0));
+    filter:blur(20px); border-radius:50%;
+  }
+  .fog.f1{ top:30%; opacity:0.5;  animation:drift 46s ease-in-out infinite; }
+  .fog.f2{ top:47%; opacity:0.36; animation:drift 60s ease-in-out infinite reverse; }
+  .fog.f3{ top:64%; opacity:0.46; animation:drift 38s ease-in-out infinite; }
+  @keyframes drift{ 0%,100%{ transform:translateX(-3%); } 50%{ transform:translateX(3%); } }
+
+  .pines{ position:absolute; bottom:0; left:0; width:100%; line-height:0; }
+  .pines svg{ display:block; width:100%; height:auto; }
+
+  .grain{
+    position:fixed; inset:0; z-index:-1; opacity:0.05;
+    mix-blend-mode:overlay; pointer-events:none;
+  }
+
+  /* ---------- Layout / poster frame ---------- */
+  .frame{
+    width:100%;
+    max-width:440px;
+    position:relative;
+    padding:26px 22px 32px;
+    border:1px solid rgba(238,241,238,0.28);
+    z-index:1;
+  }
+  .tick{ position:absolute; width:16px; height:16px; }
+  .tick::before,.tick::after{ content:""; position:absolute; background:var(--paper); opacity:0.55; }
+  .tick::before{ width:100%; height:1px; top:50%; }
+  .tick::after{ height:100%; width:1px; left:50%; }
+  .tick.tl{ top:-8px; left:-8px; } .tick.tr{ top:-8px; right:-8px; }
+  .tick.bl{ bottom:-8px; left:-8px; } .tick.br{ bottom:-8px; right:-8px; }
+
+  .page{ display:flex; flex-direction:column; align-items:center; }
+
+  .eyebrow{
+    font-size:10.5px;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+
+  .avatar-wrap{ position:relative; width:132px; height:132px; margin-bottom:20px; }
+  .avatar-wrap::before{
+    content:""; position:absolute; inset:-16px; border-radius:50%;
+    background:radial-gradient(circle, var(--sun-soft), transparent 70%); filter:blur(4px);
+  }
+  .avatar{
+    position:relative; width:132px; height:132px; border-radius:50%;
+    object-fit:cover; display:block;
+    border:1px solid rgba(238,241,238,0.7);
+    box-shadow:0 18px 40px -14px rgba(0,0,0,0.6);
+    filter:grayscale(0.15);
+  }
+
+  .name{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(34px, 9vw, 46px);
+    letter-spacing:0.005em;
+    text-align:center;
+    line-height:1;
+    margin-top:6px;
+    text-shadow:0 2px 20px rgba(0,0,0,0.4);
+  }
+  .tagline{
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--paper-dim);
+    margin-top:12px;
+  }
+
+  .socials{ display:flex; gap:22px; margin:24px 0 8px; }
+  .social-btn{
+    color:var(--paper-dim); text-decoration:none;
+    display:flex; align-items:center; justify-content:center;
+    transition:color .18s ease, transform .18s ease;
+  }
+  .social-btn:hover{ color:var(--sun); transform:translateY(-2px); }
+  .social-btn svg{ width:18px; height:18px; fill:currentColor; }
+
+  .rule{
+    width:100%; height:1px; margin:30px 0 20px;
+    background:linear-gradient(90deg, transparent, var(--line) 15%, var(--line) 85%, transparent);
+  }
+  .section-label{
+    width:100%; display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom:16px;
+  }
+  .section-label .lbl{
+    font-family:'Fraunces', serif; font-style:italic; font-size:16px; color:var(--paper);
+  }
+  .section-label .sub{
+    font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--paper-dim);
+  }
+
+  .video-card{
+    width:100%; border-radius:var(--radius); overflow:hidden;
+    border:1px solid var(--line); background:var(--card);
+    backdrop-filter:blur(8px); position:relative; aspect-ratio:16/9;
+    display:block; text-decoration:none;
+  }
+  .video-card img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:grayscale(0.4); opacity:0.7;
+    transition:opacity .2s ease, transform .3s ease, filter .3s ease;
+  }
+  .video-card:hover img{ opacity:0.5; transform:scale(1.03); filter:grayscale(0); }
+  .video-card .play{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:10px;
+  }
+  .play-circle{
+    width:52px; height:52px; border-radius:50%;
+    border:1px solid var(--paper); display:flex; align-items:center; justify-content:center;
+    background:rgba(19,23,21,0.4); backdrop-filter:blur(4px);
+  }
+  .play-circle svg{ width:16px; height:16px; fill:var(--paper); margin-left:2px; }
+  .video-card .label{
+    font-size:10px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600;
+    color:var(--paper);
+  }
+
+  /* ---------- Streaming: presented as a tracklist, not app buttons ---------- */
+  .tracklist{ width:100%; display:flex; flex-direction:column; }
+  .track{
+    display:flex; align-items:center; gap:16px;
+    padding:15px 4px; text-decoration:none; color:var(--paper);
+    border-bottom:1px solid var(--line);
+    transition:padding-left .15s ease, color .15s ease;
+  }
+  .track:first-child{ border-top:1px solid var(--line); }
+  .track:hover{ padding-left:10px; color:var(--sun); }
+  .track .num{
+    font-family:'Fraunces', serif; font-style:italic; font-size:13px;
+    color:var(--gold); width:20px; flex-shrink:0;
+  }
+  .track .platform{ font-size:15px; font-weight:500; flex:1; }
+  .track .arrow{ opacity:0.4; font-size:14px; }
+
+  .release{
+    width:100%; margin-top:14px; padding:26px 22px;
+    border:1px solid var(--line); position:relative;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+  }
+  .release-eyebrow{
+    font-size:10px; letter-spacing:0.26em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+  }
+  .release-cover{
+    width:172px; height:172px; object-fit:cover;
+    box-shadow:0 20px 50px -16px rgba(0,0,0,0.65); margin-bottom:18px;
+    filter:grayscale(0.1);
+  }
+  .release-name{
+    font-family:'Fraunces', serif; font-weight:500; font-size:22px; margin-bottom:5px;
+  }
+  .release-sub{ font-size:12px; letter-spacing:0.04em; color:var(--paper-dim); margin-bottom:20px; }
+  .cta{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:13px 30px; border:1px solid var(--paper);
+    color:var(--paper); font-weight:600; font-size:12px;
+    letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
+    transition:background .15s ease, color .15s ease;
+  }
+  .cta:hover{ background:var(--paper); color:#161a18; }
+
+  footer{
+    margin-top:36px; font-size:10px; letter-spacing:0.06em;
+    color:var(--paper-dim); text-align:center;
+  }
+
+  a:focus-visible, button:focus-visible{ outline:1px solid var(--sun); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<!-- Foggy pine forest backdrop -->
+<div class="scene" aria-hidden="true">
+  <div class="sun"></div>
+  <div class="fog f1"></div>
+  <div class="fog f2"></div>
+  <div class="fog f3"></div>
+  <div class="pines">
+    <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="pine" viewBox="0 0 60 140">
+          <rect x="26" y="120" width="8" height="20"/>
+          <polygon points="30,0 6,52 18,52 0,92 16,92 -4,140 64,140 44,92 60,92 42,52 54,52"/>
+        </symbol>
+      </defs>
+      <g fill="var(--pine-back)" opacity="0.45">
+        <use href="#pine" x="-40" y="230" width="130" height="220"/>
+        <use href="#pine" x="70"  y="215" width="150" height="240"/>
+        <use href="#pine" x="230" y="240" width="120" height="205"/>
+        <use href="#pine" x="360" y="210" width="160" height="250"/>
+        <use href="#pine" x="530" y="235" width="130" height="215"/>
+        <use href="#pine" x="670" y="205" width="170" height="260"/>
+        <use href="#pine" x="850" y="230" width="130" height="215"/>
+        <use href="#pine" x="980" y="212" width="155" height="245"/>
+        <use href="#pine" x="1140" y="235" width="130" height="215"/>
+        <use href="#pine" x="1280" y="210" width="160" height="250"/>
+      </g>
+      <g fill="var(--pine-back)" opacity="0.72">
+        <use href="#pine" x="-60" y="310" width="170" height="260"/>
+        <use href="#pine" x="130" y="300" width="190" height="280"/>
+        <use href="#pine" x="340" y="315" width="165" height="255"/>
+        <use href="#pine" x="520" y="295" width="200" height="290"/>
+        <use href="#pine" x="740" y="310" width="170" height="260"/>
+        <use href="#pine" x="920" y="298" width="195" height="285"/>
+        <use href="#pine" x="1130" y="312" width="170" height="260"/>
+        <use href="#pine" x="1300" y="296" width="190" height="280"/>
+      </g>
+      <g fill="var(--pine-front)">
+        <use href="#pine" x="-80" y="390" width="230" height="330"/>
+        <use href="#pine" x="150" y="400" width="210" height="320"/>
+        <use href="#pine" x="380" y="385" width="250" height="340"/>
+        <use href="#pine" x="640" y="398" width="220" height="325"/>
+        <use href="#pine" x="880" y="388" width="240" height="335"/>
+        <use href="#pine" x="1130" y="400" width="215" height="320"/>
+        <use href="#pine" x="1350" y="386" width="230" height="330"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<svg class="grain" aria-hidden="true">
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+  <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
+<div class="frame">
+  <span class="tick tl"></span><span class="tick tr"></span>
+  <span class="tick bl"></span><span class="tick br"></span>
+
+  <main class="page">
+
+    <div class="eyebrow" id="cfg-eyebrow"></div>
+
+    <div class="avatar-wrap">
+      <img class="avatar" id="cfg-photo" src="" alt="">
+    </div>
+
+    <h1 class="name" id="cfg-name"></h1>
+    <div class="tagline" id="cfg-tagline"></div>
+
+    <nav class="socials" id="cfg-socials" aria-label="Social links"></nav>
+
+    <div class="rule"></div>
+    <div class="section-label"><span class="lbl">Watch</span><span class="sub">Latest</span></div>
+
+    <a class="video-card" id="cfg-video" href="#" target="_blank" rel="noopener">
+      <img id="cfg-video-thumb" src="" alt="Video thumbnail">
+      <div class="play">
+        <div class="play-circle">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="label">Watch on YouTube</div>
+      </div>
+    </a>
+
+    <div class="rule"></div>
+    <div class="section-label"><span class="lbl">Listen</span><span class="sub" id="cfg-streaming-count"></span></div>
+    <div class="tracklist" id="cfg-streaming"></div>
+
+    <div class="release">
+      <div class="release-eyebrow">New Release</div>
+      <img class="release-cover" id="cfg-release-cover" src="" alt="">
+      <div class="release-name" id="cfg-release-name"></div>
+      <div class="release-sub" id="cfg-release-sub"></div>
+      <a class="cta" id="cfg-release-cta" href="#" target="_blank" rel="noopener">Listen Now</a>
+    </div>
+
+    <footer id="cfg-footer"></footer>
+
+  </main>
+</div>
+
+<!-- ============================================================
+     CONFIG — edit only what's inside here
+     ============================================================ -->
+<script id="config">
+const CONFIG = {
+  eyebrow: "Est. 2021 — Folk / Ambient",
+  name: "Shadow Pines",
+  tagline: "New music, out now",
+  photo: "https://placehold.co/300x300/161a18/eef1ee?text=Photo",
+
+  socials: [
+    { network: "instagram", url: "https://instagram.com/shadowpines" },
+    { network: "tiktok",    url: "https://tiktok.com/@shadowpines" },
+    { network: "x",         url: "https://x.com/shadowpines" }
+  ],
+
+  video: {
+    url: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    thumb: "https://placehold.co/560x315/161a18/eef1ee?text=Video"
+  },
+
+  streaming: [
+    { name: "Spotify",       url: "https://open.spotify.com/artist/xxxx" },
+    { name: "Apple Music",   url: "https://music.apple.com/artist/xxxx" },
+    { name: "YouTube Music", url: "https://music.youtube.com/channel/xxxx" }
+  ],
+
+  release: {
+    cover: "https://placehold.co/400x400/161a18/eef1ee?text=Cover",
+    name: "Track / Album Name",
+    subtitle: "Single · 2026",
+    url: "https://open.spotify.com/track/xxxx"
+  },
+
+  footer: "© 2026 Shadow Pines. All rights reserved."
+};
+</script>
+
+<script>
+  const ICONS = {
+    instagram: `<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.7.53a5.4 5.4 0 0 1 2 1.3 5.4 5.4 0 0 1 1.3 2c.28.7.47 1.5.53 2.7.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.53 2.7a5.4 5.4 0 0 1-1.3 2 5.4 5.4 0 0 1-2 1.3c-.7.28-1.5.47-2.7.53-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.7-.53a5.4 5.4 0 0 1-2-1.3 5.4 5.4 0 0 1-1.3-2c-.28-.7-.47-1.5-.53-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .53-2.7a5.4 5.4 0 0 1 1.3-2 5.4 5.4 0 0 1 2-1.3c.7-.28 1.5-.47 2.7-.53C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .05-1.55.21-1.9.35-.48.19-.82.41-1.18.77-.36.36-.58.7-.77 1.18-.14.35-.3.9-.35 1.9C3 9.28 3 9.65 3 12.8s0 3.52.07 4.76c.05 1 .21 1.55.35 1.9.19.48.41.82.77 1.18.36.36.7.58 1.18.77.35.14.9.3 1.9.35 1.24.07 1.61.07 4.76.07s3.52 0 4.76-.07c1-.05 1.55-.21 1.9-.35.48-.19.82-.41 1.18-.77.36-.36.58-.7.77-1.18.14-.35.3-.9.35-1.9.07-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1-.21-1.55-.35-1.9a3.6 3.6 0 0 0-.77-1.18 3.6 3.6 0 0 0-1.18-.77c-.35-.14-.9-.3-1.9-.35C15.52 4 15.15 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.8-2a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0z"/></svg>`,
+    tiktok: `<svg viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.9a2.9 2.9 0 1 1-2.1-2.8v-3.3a6.2 6.2 0 1 0 5.3 6.1V9.2a7.9 7.9 0 0 0 4.6 1.5V7.5a4.6 4.6 0 0 1-4.6-4.6V2z"/></svg>`,
+    x: `<svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6zm-1.2 18h1.7L6.4 4H4.6z"/></svg>`
+  };
+
+  function el(tag, cls, html){
+    const e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  document.getElementById('cfg-eyebrow').textContent = CONFIG.eyebrow;
+  document.getElementById('cfg-photo').src = CONFIG.photo;
+  document.getElementById('cfg-photo').alt = CONFIG.name;
+  document.getElementById('cfg-name').textContent = CONFIG.name;
+  document.getElementById('cfg-tagline').textContent = CONFIG.tagline;
+
+  const socialsWrap = document.getElementById('cfg-socials');
+  CONFIG.socials.forEach(s => {
+    const a = el('a', 'social-btn', ICONS[s.network] || '');
+    a.href = s.url; a.target = "_blank"; a.rel = "noopener";
+    a.setAttribute('aria-label', s.network);
+    socialsWrap.appendChild(a);
+  });
+
+  document.getElementById('cfg-video').href = CONFIG.video.url;
+  document.getElementById('cfg-video-thumb').src = CONFIG.video.thumb;
+
+  document.getElementById('cfg-streaming-count').textContent =
+    String(CONFIG.streaming.length).padStart(2, '0') + ' platforms';
+
+  const streamWrap = document.getElementById('cfg-streaming');
+  CONFIG.streaming.forEach((s, i) => {
+    const a = el('a', 'track');
+    a.href = s.url; a.target = "_blank"; a.rel = "noopener";
+    a.innerHTML = `<span class="num">${String(i + 1).padStart(2, '0')}</span><span class="platform">${s.name}</span><span class="arrow">↗</span>`;
+    streamWrap.appendChild(a);
+  });
+
+  document.getElementById('cfg-release-cover').src = CONFIG.release.cover;
+  document.getElementById('cfg-release-cover').alt = CONFIG.release.name;
+  document.getElementById('cfg-release-name').textContent = CONFIG.release.name;
+  document.getElementById('cfg-release-sub').textContent = CONFIG.release.subtitle;
+  document.getElementById('cfg-release-cta').href = CONFIG.release.url;
+
+  document.getElementById('cfg-footer').textContent = CONFIG.footer;
+</script>
+
+</body>
+</html>
