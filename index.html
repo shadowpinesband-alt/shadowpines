@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08050d">
-<meta name="description" content="Página oficial do artista — música, vídeos, streaming e contactos.">
-<title>SEU NOME — Artista</title>
+<meta name="description" content="Official artist website — music, videos, streaming and contact.">
+<title>YOUR NAME — Artist</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --bg:#050505;
   --panel:rgba(255,255,255,.055);
@@ -70,7 +71,10 @@ body:after{
   margin:auto;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:650px;
@@ -96,7 +100,10 @@ body:after{
   font-weight:700;
 }
 
-/* FOTO DO ARTISTA */
+
+/* =========================
+   ARTIST PHOTO
+========================= */
 
 .artist-photo{
   width:150px;
@@ -162,7 +169,10 @@ h1{
   transform:translateY(-3px);
 }
 
-/* VIDEO */
+
+/* =========================
+   VIDEO
+========================= */
 
 .hero-video{
   position:relative;
@@ -208,7 +218,10 @@ h1{
   color:#a63cff;
 }
 
-/* SEÇÕES */
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
   text-align:center;
@@ -230,7 +243,10 @@ h1{
   text-transform:uppercase;
 }
 
-/* STREAMING */
+
+/* =========================
+   STREAMING PLATFORMS
+========================= */
 
 .stream-grid{
   display:grid;
@@ -303,7 +319,10 @@ h1{
   font-size:24px;
 }
 
-/* LANÇAMENTO */
+
+/* =========================
+   NEW RELEASE
+========================= */
 
 .release{
   margin:20px 0 55px;
@@ -377,7 +396,10 @@ h1{
   box-shadow:0 12px 35px rgba(130,28,225,.28);
 }
 
-/* SHOWS */
+
+/* =========================
+   SHOWS
+========================= */
 
 .shows{
   margin:0 0 25px;
@@ -405,7 +427,10 @@ h1{
   font-size:13px;
 }
 
-/* CONTACTO */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
   margin:20px 0 50px;
@@ -434,7 +459,10 @@ h1{
   color:#bd73ff;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   border-top:1px solid rgba(255,255,255,.12);
@@ -456,7 +484,10 @@ footer{
   letter-spacing:0;
 }
 
-/* BOTÃO TOPO */
+
+/* =========================
+   BACK TO TOP
+========================= */
 
 .top{
   position:fixed;
@@ -472,7 +503,10 @@ footer{
   backdrop-filter:blur(10px);
 }
 
-/* ANIMAÇÃO */
+
+/* =========================
+   ANIMATION
+========================= */
 
 .fade{
   opacity:0;
@@ -485,7 +519,10 @@ footer{
   transform:none;
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
@@ -519,7 +556,10 @@ footer{
   }
 }
 
-/* TELEMÓVEL */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -590,8 +630,10 @@ footer{
     margin-bottom:14px;
   }
 }
+
 </style>
 </head>
+
 
 <body>
 
@@ -599,60 +641,73 @@ footer{
 
 <div class="container">
 
+
 <!-- =========================
-     HERO / ARTISTA
+     HERO / ARTIST
 ========================= -->
 
 <section class="hero">
 
   <div class="hero-copy fade">
 
-    <!-- FOTO DO ARTISTA -->
-    <!-- Coloque foto-artista.jpg na mesma pasta deste index.html -->
+    <!-- Artist photo -->
+    <!-- Put foto-artista.png in the same folder as index.html -->
 
     <img
       class="artist-photo"
-      src="foto-artista.jpg"
-      alt="SEU NOME">
+      src="foto-artista.png"
+      alt="YOUR NAME"
+    >
 
     <div class="eyebrow">
-      Bem-vindo ao mundo de
+      Welcome to the world of
     </div>
 
     <h1>
-      SEU NOME
+      YOUR NAME
     </h1>
 
     <span class="signature">
-      Artista
+      Artist
     </span>
 
     <p class="bio">
-      Músicas que conectam sentimentos e contam histórias reais.
-      Obrigado por apoiar a arte independente.
+      Music that connects emotions and tells real stories.
+      Thank you for supporting independent art.
     </p>
 
-    <!-- REDES SOCIAIS -->
 
-    <nav class="socials" aria-label="Redes sociais">
+    <!-- Social media -->
 
-      <a href="#" aria-label="Instagram">
+    <nav class="socials" aria-label="Social media">
+
+      <a
+        href="#"
+        aria-label="Instagram">
         IG
       </a>
 
-      <a href="#" aria-label="TikTok">
+      <a
+        href="#"
+        aria-label="TikTok">
         TT
       </a>
 
-      <a href="#" aria-label="YouTube">
+      <a
+        href="#"
+        aria-label="YouTube">
         YT
       </a>
 
-      <a href="#" aria-label="X">
+      <a
+        href="#"
+        aria-label="X">
         X
       </a>
 
-      <a href="#" aria-label="Facebook">
+      <a
+        href="#"
+        aria-label="Facebook">
         f
       </a>
 
@@ -662,7 +717,7 @@ footer{
 
 
   <!-- =========================
-       VÍDEO
+       VIDEO
   ========================= -->
 
   <div class="fade">
@@ -672,19 +727,18 @@ footer{
       <div class="video-ratio">
 
         <!--
-        COLOQUE AQUI O ID DO SEU VÍDEO DO YOUTUBE.
+        ENTER YOUR YOUTUBE VIDEO ID BELOW.
 
-        Exemplo:
+        Example:
         https://www.youtube.com/watch?v=ABC123
 
-        O ID seria:
+        The video ID is:
         ABC123
-
         -->
 
         <iframe
           src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1&playsinline=1&rel=0"
-          title="SEU NOME - Official Music Video"
+          title="YOUR NAME - Official Music Video"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
         </iframe>
@@ -695,7 +749,7 @@ footer{
 
     <div class="video-label">
       <span>●</span>
-      Vídeo oficial • assista agora
+      Official video • watch now
     </div>
 
   </div>
@@ -704,7 +758,7 @@ footer{
 
 
 <!-- =========================
-     PLATAFORMAS
+     STREAMING
 ========================= -->
 
 <section class="section fade">
@@ -714,15 +768,16 @@ footer{
   </div>
 
   <div class="section-title">
-    Ouça agora
+    Listen Now
   </div>
 
   <div class="section-sub">
-    Em todas as plataformas
+    Available on all platforms
   </div>
 
 
   <div class="stream-grid">
+
 
     <a
       class="stream"
@@ -736,7 +791,7 @@ footer{
 
       <div>
         <strong>Spotify</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -758,7 +813,7 @@ footer{
 
       <div>
         <strong>Apple Music</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -780,7 +835,7 @@ footer{
 
       <div>
         <strong>YouTube Music</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -802,7 +857,7 @@ footer{
 
       <div>
         <strong>Deezer</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -824,7 +879,7 @@ footer{
 
       <div>
         <strong>Amazon Music</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -846,7 +901,7 @@ footer{
 
       <div>
         <strong>TIDAL</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -868,7 +923,7 @@ footer{
 
       <div>
         <strong>SoundCloud</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -890,7 +945,7 @@ footer{
 
       <div>
         <strong>Audiomack</strong>
-        <small>Ouvir agora</small>
+        <small>Listen now</small>
       </div>
 
       <div class="arrow">
@@ -905,36 +960,39 @@ footer{
 
 
 <!-- =========================
-     NOVO LANÇAMENTO
+     NEW RELEASE
 ========================= -->
 
 <section class="release fade">
 
+
   <!--
-  Coloque a capa da música na mesma pasta
-  com o nome: release-cover.jpg
+  Put your release cover in the same folder
+  and name it: release-cover.png
   -->
 
   <img
     class="cover"
-    src="release-cover.jpg"
-    alt="Capa do novo lançamento">
+    src="release-cover.png"
+    alt="New release cover"
+  >
 
 
   <div class="release-copy">
 
     <div class="section-kicker">
-      Novo lançamento
+      New Release
     </div>
 
     <h2>
-      ALÉM DE MIM
+      BEYOND ME
     </h2>
 
     <p>
-      O novo single já está disponível em todas as plataformas.
-      Escolha onde quer ouvir.
+      The new single is now available on all major platforms.
+      Choose where you want to listen.
     </p>
+
 
     <div class="buttons">
 
@@ -943,7 +1001,7 @@ footer{
         href="#"
         target="_blank"
         rel="noopener">
-        ◉ OUVIR NO SPOTIFY
+        ◉ LISTEN ON SPOTIFY
       </a>
 
       <a
@@ -970,7 +1028,7 @@ footer{
 
 
 <!-- =========================
-     AGENDA
+     UPCOMING SHOWS
 ========================= -->
 
 <section class="fade">
@@ -980,14 +1038,14 @@ footer{
     style="padding-top:0">
 
     <div class="section-kicker">
-      Agenda
+      Tour
     </div>
 
     <div
       class="section-title"
       style="font-size:18px">
 
-      Próximos shows
+      Upcoming Shows
 
     </div>
 
@@ -1003,12 +1061,12 @@ footer{
     <div>
 
       <strong>
-        Em breve
+        Coming Soon
       </strong>
 
       <span>
-        Novas datas serão anunciadas.
-        Acompanha-me nas redes sociais.
+        New dates will be announced soon.
+        Follow me on social media for updates.
       </span>
 
     </div>
@@ -1019,7 +1077,7 @@ footer{
 
 
 <!-- =========================
-     CONTACTO
+     CONTACT
 ========================= -->
 
 <section class="contact fade">
@@ -1027,11 +1085,11 @@ footer{
   <div>
 
     <div class="section-kicker">
-      Para shows, parcerias e outros
+      For shows, partnerships and bookings
     </div>
 
     <h3>
-      FALE COM A EQUIPE
+      CONTACT THE TEAM
     </h3>
 
   </div>
@@ -1039,9 +1097,9 @@ footer{
 
   <a
     class="btn primary"
-    href="mailto:contacto@seudominio.com">
+    href="mailto:contact@yourdomain.com">
 
-    ✈ ENTRAR EM CONTACTO
+    ✈ GET IN TOUCH
 
   </a>
 
@@ -1055,11 +1113,11 @@ footer{
 <footer>
 
   <div class="logo">
-    Seu Nome
+    Your Name
   </div>
 
   <div>
-    © 2026 SEU NOME · Todos os direitos reservados
+    © 2026 YOUR NAME · All rights reserved
   </div>
 
 </footer>
@@ -1069,12 +1127,14 @@ footer{
 </main>
 
 
-<!-- BOTÃO VOLTAR AO TOPO -->
+<!-- =========================
+     BACK TO TOP
+========================= -->
 
 <button
   class="top"
   id="top"
-  aria-label="Voltar ao topo">
+  aria-label="Back to top">
 
   ⌃
 
