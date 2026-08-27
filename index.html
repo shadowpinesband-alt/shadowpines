@@ -1,90 +1,173 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08050d">
 
-<meta name="description"
-content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock.">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#08050d"
+>
+
+<meta
+  name="description"
+  content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock."
+>
 
 <title>SHADOW PINES — Music</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
 
 <style>
 
+
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
+
   --bg:#050505;
+
   --panel:rgba(255,255,255,.055);
+
   --panel2:rgba(255,255,255,.085);
+
   --line:rgba(255,255,255,.16);
+
   --text:#fff;
+
   --muted:#aaa5b1;
+
   --purple:#9b35ff;
+
   --purple2:#6f19d8;
+
   --max:1180px;
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   box-sizing:border-box;
 }
 
+
 html{
   scroll-behavior:smooth;
 }
 
+
 body{
+
   margin:0;
-  background:var(--bg);
+
+  background:#050505;
+
   color:var(--text);
-  font-family:Inter,Arial,sans-serif;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
   overflow-x:hidden;
+
 }
 
+
+/* =========================================================
+   FOREST BACKGROUND
+========================================================= */
+
 body:before{
+
   content:"";
+
   position:fixed;
+
   inset:0;
+
   z-index:-2;
 
   background:
-    radial-gradient(
-      circle at 68% 12%,
-      rgba(146,42,255,.20),
-      transparent 28%
+
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.94),
+      rgba(5,5,5,.68),
+      rgba(5,5,5,.82)
     ),
-    radial-gradient(
-      circle at 15% 30%,
-      rgba(92,24,170,.12),
-      transparent 30%
-    ),
+
     linear-gradient(
       180deg,
-      #080609 0%,
-      #030303 75%
-    );
+      rgba(15,8,22,.42),
+      rgba(0,0,0,.92)
+    ),
+
+    url("./forest.jpg");
+
+  background-size:cover;
+
+  background-position:center center;
+
+  background-repeat:no-repeat;
+
 }
 
+
+/* =========================================================
+   DARK OVERLAY / GRID
+========================================================= */
+
 body:after{
+
   content:"";
+
   position:fixed;
+
   inset:0;
+
   z-index:-1;
+
   pointer-events:none;
-  opacity:.16;
+
+  opacity:.13;
 
   background-image:
+
     linear-gradient(
       rgba(255,255,255,.035) 1px,
       transparent 1px
     ),
+
     linear-gradient(
       90deg,
       rgba(255,255,255,.035) 1px,
@@ -99,15 +182,24 @@ body:after{
       black,
       transparent 75%
     );
+
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
-  width:min(
-    calc(100% - 48px),
-    var(--max)
-  );
+
+  width:
+    min(
+      calc(100% - 48px),
+      var(--max)
+    );
 
   margin:auto;
+
 }
 
 
@@ -116,23 +208,31 @@ body:after{
 ========================================================= */
 
 .hero{
+
   min-height:auto;
 
   display:grid;
 
-  grid-template-columns:.9fr 1.1fr;
+  grid-template-columns:
+    .9fr 1.1fr;
 
   gap:45px;
 
   align-items:start;
 
   padding:45px 0 25px;
+
 }
 
+
 .hero-copy{
+
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
+
 }
 
 
@@ -141,6 +241,7 @@ body:after{
 ========================================================= */
 
 .artist-heading{
+
   display:flex;
 
   align-items:center;
@@ -148,6 +249,7 @@ body:after{
   gap:20px;
 
   margin-bottom:22px;
+
 }
 
 
@@ -156,7 +258,9 @@ body:after{
 ========================================================= */
 
 .artist-photo{
+
   width:105px;
+
   height:105px;
 
   object-fit:cover;
@@ -166,12 +270,15 @@ body:after{
   border:2px solid var(--purple);
 
   box-shadow:
+
     0 0 25px rgba(155,53,255,.30),
+
     0 0 60px rgba(155,53,255,.15);
 
   display:block;
 
   flex-shrink:0;
+
 }
 
 
@@ -180,6 +287,7 @@ body:after{
 ========================================================= */
 
 .artist-heading-text{
+
   display:flex;
 
   flex-direction:column;
@@ -187,16 +295,20 @@ body:after{
   align-items:flex-start;
 
   justify-content:center;
+
 }
 
+
 .artist-name{
+
   font-family:cursive;
 
-  font-size:clamp(
-    32px,
-    3.5vw,
-    48px
-  );
+  font-size:
+    clamp(
+      32px,
+      3.5vw,
+      48px
+    );
 
   color:#fff;
 
@@ -207,6 +319,7 @@ body:after{
   letter-spacing:0;
 
   font-weight:500;
+
 }
 
 
@@ -215,6 +328,7 @@ body:after{
 ========================================================= */
 
 .signature{
+
   font-family:cursive;
 
   font-size:30px;
@@ -228,6 +342,7 @@ body:after{
   line-height:1;
 
   margin:5px 0 0;
+
 }
 
 
@@ -236,23 +351,26 @@ body:after{
 ========================================================= */
 
 .bio{
+
   max-width:500px;
 
-  color:#d8d4dc;
+  color:#ddd;
 
   line-height:1.7;
 
   font-size:14px;
 
   margin:0;
+
 }
 
 
 /* =========================================================
-   VIDEO
+   VIDEO COLUMN
 ========================================================= */
 
 .hero-video-column{
+
   display:flex;
 
   flex-direction:column;
@@ -260,12 +378,21 @@ body:after{
   align-items:stretch;
 
   padding-top:0;
+
 }
 
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
 .hero-video{
+
   position:relative;
 
-  border:1px solid rgba(183,91,255,.65);
+  border:
+    1px solid
+    rgba(183,91,255,.65);
 
   border-radius:17px;
 
@@ -275,9 +402,12 @@ body:after{
 
   box-shadow:
     0 0 55px rgba(126,24,210,.16);
+
 }
 
+
 .hero-video:before{
+
   content:"";
 
   position:absolute;
@@ -285,31 +415,42 @@ body:after{
   inset:0;
 
   box-shadow:
-    inset 0 0 35px rgba(171,68,255,.2);
+    inset 0 0 35px
+    rgba(171,68,255,.2);
 
   pointer-events:none;
 
   z-index:2;
+
 }
 
+
 .video-ratio{
+
   position:relative;
 
   aspect-ratio:16/9;
+
 }
 
+
 .video-ratio iframe{
+
   position:absolute;
 
   inset:0;
 
   width:100%;
+
   height:100%;
 
   border:0;
+
 }
 
+
 .video-label{
+
   text-align:center;
 
   color:#b7b1bb;
@@ -321,18 +462,23 @@ body:after{
   text-transform:uppercase;
 
   padding:15px 0 3px;
+
 }
 
+
 .video-label span{
+
   color:#a63cff;
+
 }
 
 
 /* =========================================================
-   SOCIAL MEDIA BELOW VIDEO
+   SOCIAL MEDIA
 ========================================================= */
 
 .video-socials{
+
   display:flex;
 
   justify-content:center;
@@ -340,10 +486,14 @@ body:after{
   gap:28px;
 
   margin-top:25px;
+
 }
 
+
 .video-socials a{
+
   width:78px;
+
   height:78px;
 
   display:grid;
@@ -354,27 +504,37 @@ body:after{
 
   border-radius:18px;
 
-  background:rgba(255,255,255,.035);
+  background:
+    rgba(255,255,255,.035);
 
   text-decoration:none;
 
   transition:.25s;
+
 }
 
+
 .video-socials a:hover{
+
   transform:translateY(-4px);
 
   border-color:#a63cff;
 
   box-shadow:
-    0 0 30px rgba(155,53,255,.30);
+    0 0 30px
+    rgba(155,53,255,.30);
+
 }
 
+
 .video-socials img{
+
   width:52px;
+
   height:52px;
 
   object-fit:contain;
+
 }
 
 
@@ -383,34 +543,16 @@ body:after{
 ========================================================= */
 
 .section{
+
   text-align:center;
 
   padding:35px 0 25px;
+
 }
 
-.section-title{
-  font-size:25px;
-
-  letter-spacing:.18em;
-
-  font-weight:700;
-
-  margin:9px 0;
-
-  text-transform:uppercase;
-}
-
-.section-sub{
-  color:#aaa;
-
-  font-size:11px;
-
-  letter-spacing:.24em;
-
-  text-transform:uppercase;
-}
 
 .section-kicker{
+
   font-size:11px;
 
   letter-spacing:.28em;
@@ -420,15 +562,44 @@ body:after{
   text-transform:uppercase;
 
   font-weight:700;
+
+}
+
+
+.section-title{
+
+  font-size:25px;
+
+  letter-spacing:.18em;
+
+  font-weight:700;
+
+  margin:9px 0;
+
+  text-transform:uppercase;
+
+}
+
+
+.section-sub{
+
+  color:#aaa;
+
+  font-size:11px;
+
+  letter-spacing:.24em;
+
+  text-transform:uppercase;
+
 }
 
 
 /* =========================================================
    LISTEN NOW
-   NÃO ALTERADO
 ========================================================= */
 
 .stream-grid{
+
   display:grid;
 
   grid-template-columns:
@@ -437,9 +608,12 @@ body:after{
   gap:14px;
 
   margin-top:25px;
+
 }
 
+
 .stream{
+
   min-height:74px;
 
   display:flex;
@@ -458,16 +632,20 @@ body:after{
 
   text-decoration:none;
 
-  background:rgba(255,255,255,.035);
+  background:
+    rgba(255,255,255,.035);
 
   transition:.25s;
 
   position:relative;
 
   overflow:hidden;
+
 }
 
+
 .stream:after{
+
   content:"";
 
   position:absolute;
@@ -487,22 +665,32 @@ body:after{
   transform:translateX(-100%);
 
   transition:.35s;
+
 }
 
+
 .stream:hover{
+
   background:var(--panel2);
 
   transform:translateY(-3px);
 
   border-color:#70408f;
+
 }
+
 
 .stream:hover:after{
+
   transform:translateX(0);
+
 }
 
+
 .platform-icon{
+
   width:38px;
+
   height:38px;
 
   border-radius:11px;
@@ -518,20 +706,32 @@ body:after{
   border:1px solid #333;
 
   overflow:hidden;
+
+  flex-shrink:0;
+
 }
 
+
 .platform-icon img{
+
   width:26px;
+
   height:26px;
 
   object-fit:contain;
+
 }
+
 
 .stream strong{
+
   font-size:14px;
+
 }
 
+
 .stream small{
+
   display:block;
 
   color:#999;
@@ -539,31 +739,39 @@ body:after{
   margin-top:3px;
 
   font-size:10px;
+
 }
 
+
 .arrow{
+
   margin-left:auto;
 
   color:#aaa;
 
   font-size:24px;
+
 }
 
 
 /* =========================================================
-   SILENT MAPS — NEW RELEASE
+   SILENT MAPS
 ========================================================= */
 
 .release-section{
+
   margin:25px 0 55px;
 
   padding:32px;
 
-  border:1px solid #8d28e7;
+  border:
+    1px solid
+    #8d28e7;
 
   border-radius:18px;
 
   background:
+
     linear-gradient(
       120deg,
       rgba(91,26,129,.25),
@@ -571,16 +779,23 @@ body:after{
     );
 
   box-shadow:
-    0 20px 70px rgba(0,0,0,.3);
+    0 20px 70px
+    rgba(0,0,0,.3);
 
   text-align:center;
+
 }
+
 
 .release-section .section-kicker{
+
   color:#bd73ff;
+
 }
 
+
 .release-title{
+
   font-size:42px;
 
   letter-spacing:.14em;
@@ -588,9 +803,12 @@ body:after{
   margin:12px 0 8px;
 
   font-weight:800;
+
 }
 
+
 .release-subtitle{
+
   color:#aaa;
 
   font-size:12px;
@@ -600,6 +818,7 @@ body:after{
   text-transform:uppercase;
 
   margin-bottom:28px;
+
 }
 
 
@@ -608,6 +827,7 @@ body:after{
 ========================================================= */
 
 .release-content{
+
   display:grid;
 
   grid-template-columns:
@@ -622,9 +842,12 @@ body:after{
   margin:auto;
 
   text-align:left;
+
 }
 
+
 .release-cover{
+
   width:100%;
 
   aspect-ratio:1;
@@ -636,13 +859,18 @@ body:after{
   border:1px solid var(--line);
 
   box-shadow:
-    0 20px 50px rgba(0,0,0,.45);
+    0 20px 50px
+    rgba(0,0,0,.45);
 
   display:block;
+
 }
 
+
 .release-info{
+
   text-align:center;
+
 }
 
 
@@ -651,6 +879,7 @@ body:after{
 ========================================================= */
 
 .countdown{
+
   display:grid;
 
   grid-template-columns:
@@ -661,21 +890,28 @@ body:after{
   width:100%;
 
   margin:0 auto;
+
 }
 
+
 .count-box{
+
   padding:18px 8px;
 
   border:1px solid var(--line);
 
   border-radius:14px;
 
-  background:rgba(255,255,255,.035);
+  background:
+    rgba(255,255,255,.035);
 
   text-align:center;
+
 }
 
+
 .count-number{
+
   display:block;
 
   font-size:34px;
@@ -687,10 +923,14 @@ body:after{
   color:#fff;
 
   text-shadow:
-    0 0 20px rgba(166,60,255,.25);
+    0 0 20px
+    rgba(166,60,255,.25);
+
 }
 
+
 .count-label{
+
   display:block;
 
   margin-top:8px;
@@ -702,9 +942,12 @@ body:after{
   letter-spacing:.16em;
 
   text-transform:uppercase;
+
 }
 
+
 .release-date{
+
   margin-top:22px;
 
   color:#b66cff;
@@ -716,6 +959,7 @@ body:after{
   letter-spacing:.15em;
 
   text-transform:uppercase;
+
 }
 
 
@@ -724,6 +968,7 @@ body:after{
 ========================================================= */
 
 .out-now{
+
   display:none;
 
   font-size:46px;
@@ -735,9 +980,11 @@ body:after{
   color:#fff;
 
   text-shadow:
-    0 0 30px rgba(166,60,255,.55);
+    0 0 30px
+    rgba(166,60,255,.55);
 
   margin:20px 0;
+
 }
 
 
@@ -746,15 +993,19 @@ body:after{
 ========================================================= */
 
 .contact{
+
   margin:20px 0 50px;
 
   padding:25px;
 
-  border:1px solid #8d28e7;
+  border:
+    1px solid
+    #8d28e7;
 
   border-radius:15px;
 
   background:
+
     linear-gradient(
       90deg,
       rgba(104,19,151,.24),
@@ -768,21 +1019,34 @@ body:after{
   justify-content:space-between;
 
   gap:25px;
+
 }
 
+
 .contact h3{
+
   margin:6px 0 0;
 
   font-size:24px;
 
   letter-spacing:.12em;
+
 }
+
 
 .contact .section-kicker{
+
   color:#bd73ff;
+
 }
 
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .btn{
+
   display:inline-flex;
 
   align-items:center;
@@ -804,12 +1068,16 @@ body:after{
   font-weight:800;
 
   letter-spacing:.1em;
+
 }
 
+
 .btn.primary{
+
   border:0;
 
   background:
+
     linear-gradient(
       135deg,
       #a638ff,
@@ -817,7 +1085,9 @@ body:after{
     );
 
   box-shadow:
-    0 12px 35px rgba(130,28,225,.28);
+    0 12px 35px
+    rgba(130,28,225,.28);
+
 }
 
 
@@ -826,7 +1096,10 @@ body:after{
 ========================================================= */
 
 footer{
-  border-top:1px solid rgba(255,255,255,.12);
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.12);
 
   padding:30px 0 35px;
 
@@ -843,9 +1116,12 @@ footer{
   letter-spacing:.1em;
 
   text-transform:uppercase;
+
 }
 
+
 .logo{
+
   font-family:cursive;
 
   color:#fff;
@@ -855,6 +1131,7 @@ footer{
   text-transform:none;
 
   letter-spacing:0;
+
 }
 
 
@@ -863,12 +1140,15 @@ footer{
 ========================================================= */
 
 .top{
+
   position:fixed;
 
   right:25px;
+
   bottom:25px;
 
   width:48px;
+
   height:48px;
 
   border:1px solid var(--line);
@@ -882,6 +1162,7 @@ footer{
   cursor:pointer;
 
   backdrop-filter:blur(10px);
+
 }
 
 
@@ -890,6 +1171,7 @@ footer{
 ========================================================= */
 
 .fade{
+
   opacity:0;
 
   transform:translateY(18px);
@@ -897,12 +1179,16 @@ footer{
   transition:
     opacity .7s,
     transform .7s;
+
 }
 
+
 .fade.show{
+
   opacity:1;
 
   transform:none;
+
 }
 
 
@@ -913,6 +1199,7 @@ footer{
 @media(max-width:900px){
 
   .hero{
+
     grid-template-columns:1fr;
 
     gap:35px;
@@ -920,34 +1207,50 @@ footer{
     min-height:auto;
 
     padding-top:35px;
+
   }
 
+
   .hero-copy{
+
     text-align:center;
 
     align-items:center;
+
   }
 
+
   .artist-heading{
+
     justify-content:center;
 
     text-align:left;
+
   }
 
+
   .bio{
+
     margin-left:auto;
 
     margin-right:auto;
+
   }
+
 
   .stream-grid{
+
     grid-template-columns:
       repeat(2,1fr);
+
   }
 
+
   .release-content{
+
     grid-template-columns:
       230px 1fr;
+
   }
 
 }
@@ -960,128 +1263,198 @@ footer{
 @media(max-width:600px){
 
   .container{
-    width:min(
-      calc(100% - 28px),
-      520px
-    );
+
+    width:
+      min(
+        calc(100% - 28px),
+        520px
+      );
+
   }
+
 
   .hero{
+
     padding-top:25px;
+
   }
 
+
   .artist-heading{
+
     gap:15px;
 
     justify-content:center;
 
     width:100%;
+
   }
+
 
   .artist-photo{
+
     width:85px;
+
     height:85px;
+
   }
+
 
   .artist-name{
+
     font-size:30px;
+
   }
+
 
   .signature{
+
     font-size:25px;
+
   }
 
+
   .bio{
+
     font-size:13px;
 
     line-height:1.65;
+
   }
+
 
   .video-socials{
+
     gap:18px;
+
   }
+
 
   .video-socials a{
+
     width:70px;
+
     height:70px;
+
   }
+
 
   .video-socials img{
+
     width:46px;
+
     height:46px;
+
   }
+
 
   .stream-grid{
+
     grid-template-columns:1fr;
+
   }
+
 
   .release-section{
+
     padding:24px 15px;
+
   }
+
 
   .release-title{
+
     font-size:30px;
+
   }
 
+
   .release-content{
+
     grid-template-columns:1fr;
 
     gap:25px;
+
   }
 
+
   .release-cover{
+
     max-width:280px;
 
     margin:auto;
+
   }
+
 
   .countdown{
+
     grid-template-columns:
       repeat(2,1fr);
+
   }
+
 
   .count-number{
+
     font-size:30px;
+
   }
 
+
   .contact{
+
     display:block;
 
     text-align:center;
+
   }
 
+
   .contact .btn{
+
     margin-top:18px;
 
     width:100%;
+
   }
 
+
   footer{
+
     display:block;
 
     text-align:center;
+
   }
 
+
   .logo{
+
     margin-bottom:14px;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <main>
+
 
 <div class="container">
 
 
 <!-- =======================================================
      HERO
-======================================================= -->
+======================================================== -->
+
 
 <section class="hero">
 
@@ -1089,9 +1462,7 @@ footer{
   <div class="hero-copy fade">
 
 
-    <!-- =====================================================
-         ARTIST NAME + PHOTO
-    ====================================================== -->
+    <!-- ARTIST HEADER -->
 
     <div class="artist-heading">
 
@@ -1122,9 +1493,7 @@ footer{
     </div>
 
 
-    <!-- =====================================================
-         BIO
-    ====================================================== -->
+    <!-- BIO -->
 
     <p class="bio">
 
@@ -1151,9 +1520,7 @@ footer{
   </div>
 
 
-  <!-- =======================================================
-       VIDEO
-  ======================================================== -->
+  <!-- VIDEO -->
 
   <div class="hero-video-column fade">
 
@@ -1187,9 +1554,7 @@ footer{
     </div>
 
 
-    <!-- =====================================================
-         SOCIAL MEDIA
-    ====================================================== -->
+    <!-- SOCIAL MEDIA -->
 
     <nav
       class="video-socials"
@@ -1238,7 +1603,8 @@ footer{
 
 <!-- =======================================================
      LISTEN NOW
-======================================================= -->
+======================================================== -->
+
 
 <section class="section fade">
 
@@ -1261,6 +1627,8 @@ footer{
   <div class="stream-grid">
 
 
+    <!-- SPOTIFY -->
+
     <a
       class="stream"
       href="https://open.spotify.com/intl-pt/artist/2Z7y9G3WkE10uy8NMJJXgH?si=kqOnjvxfQMauC9Yd1vGcjQ"
@@ -1277,6 +1645,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1289,12 +1658,15 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
 
     </a>
 
+
+    <!-- APPLE MUSIC -->
 
     <a
       class="stream"
@@ -1312,6 +1684,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1324,12 +1697,15 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
 
     </a>
 
+
+    <!-- YOUTUBE MUSIC -->
 
     <a
       class="stream"
@@ -1347,6 +1723,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1359,12 +1736,15 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
 
     </a>
 
+
+    <!-- DEEZER -->
 
     <a
       class="stream"
@@ -1382,6 +1762,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1394,12 +1775,15 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
 
     </a>
 
+
+    <!-- TIDAL -->
 
     <a
       class="stream"
@@ -1417,6 +1801,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1429,12 +1814,15 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
 
     </a>
 
+
+    <!-- SOUNDCLOUD -->
 
     <a
       class="stream"
@@ -1452,6 +1840,7 @@ footer{
 
       </div>
 
+
       <div>
 
         <strong>
@@ -1464,6 +1853,7 @@ footer{
 
       </div>
 
+
       <div class="arrow">
         ›
       </div>
@@ -1473,12 +1863,14 @@ footer{
 
   </div>
 
+
 </section>
 
 
 <!-- =======================================================
-     SILENT MAPS — NEW RELEASE
-======================================================= -->
+     SILENT MAPS
+======================================================== -->
+
 
 <section class="release-section fade">
 
@@ -1601,6 +1993,7 @@ footer{
 
     </div>
 
+
   </div>
 
 
@@ -1609,7 +2002,8 @@ footer{
 
 <!-- =======================================================
      CONTACT
-======================================================= -->
+======================================================== -->
+
 
 <section class="contact fade">
 
@@ -1645,7 +2039,8 @@ footer{
 
 <!-- =======================================================
      FOOTER
-======================================================= -->
+======================================================== -->
+
 
 <footer>
 
@@ -1670,53 +2065,64 @@ footer{
 
 <!-- =======================================================
      BACK TO TOP
-======================================================= -->
+======================================================== -->
+
 
 <button
   class="top"
   id="top"
   aria-label="Back to top"
 >
+
   ⌃
+
 </button>
 
 
 <script>
 
+
 /* =========================================================
    FADE ANIMATION
 ========================================================= */
 
-const observer = new IntersectionObserver(
+const observer =
+  new IntersectionObserver(
 
-  entries => {
+    entries => {
 
-    entries.forEach(entry => {
+      entries.forEach(
+        entry => {
 
-      if(entry.isIntersecting){
+          if(entry.isIntersecting){
 
-        entry.target.classList.add("show");
+            entry.target
+              .classList
+              .add("show");
 
-      }
+          }
 
-    });
+        }
+      );
 
-  },
+    },
 
-  {
-    threshold:.12
-  }
+    {
+      threshold:.12
+    }
 
-);
+  );
 
 
 document
   .querySelectorAll(".fade")
-  .forEach(element => {
+  .forEach(
+    element => {
 
-    observer.observe(element);
+      observer.observe(element);
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -1756,6 +2162,7 @@ const releaseDate =
 
 function updateCountdown(){
 
+
   const now =
     new Date().getTime();
 
@@ -1765,18 +2172,24 @@ function updateCountdown(){
 
 
   const countdown =
-    document.getElementById("countdown");
+    document.getElementById(
+      "countdown"
+    );
 
 
   const outNow =
-    document.getElementById("outNow");
+    document.getElementById(
+      "outNow"
+    );
 
 
   if(difference <= 0){
 
-    countdown.style.display = "none";
+    countdown.style.display =
+      "none";
 
-    outNow.style.display = "block";
+    outNow.style.display =
+      "block";
 
     return;
 
@@ -1792,42 +2205,60 @@ function updateCountdown(){
 
   const hours =
     Math.floor(
-      (difference %
-      (1000 * 60 * 60 * 24)) /
+      (
+        difference %
+        (1000 * 60 * 60 * 24)
+      ) /
       (1000 * 60 * 60)
     );
 
 
   const minutes =
     Math.floor(
-      (difference %
-      (1000 * 60 * 60)) /
+      (
+        difference %
+        (1000 * 60 * 60)
+      ) /
       (1000 * 60)
     );
 
 
   const seconds =
     Math.floor(
-      (difference %
-      (1000 * 60)) /
+      (
+        difference %
+        (1000 * 60)
+      ) /
       1000
     );
 
 
-  document.getElementById("days").textContent =
-    String(days).padStart(2,"0");
+  document
+    .getElementById("days")
+    .textContent =
+      String(days)
+        .padStart(2,"0");
 
 
-  document.getElementById("hours").textContent =
-    String(hours).padStart(2,"0");
+  document
+    .getElementById("hours")
+    .textContent =
+      String(hours)
+        .padStart(2,"0");
 
 
-  document.getElementById("minutes").textContent =
-    String(minutes).padStart(2,"0");
+  document
+    .getElementById("minutes")
+    .textContent =
+      String(minutes)
+        .padStart(2,"0");
 
 
-  document.getElementById("seconds").textContent =
-    String(seconds).padStart(2,"0");
+  document
+    .getElementById("seconds")
+    .textContent =
+      String(seconds)
+        .padStart(2,"0");
 
 }
 
@@ -1840,8 +2271,11 @@ setInterval(
   1000
 );
 
+
 </script>
 
+
 </body>
+
 </html>
 ```
