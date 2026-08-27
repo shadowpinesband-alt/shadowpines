@@ -2,29 +2,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08050d">
-<meta name="description" content="Official Shadow Pines website — music, videos, streaming and contact.">
-<title>Shadow Pines — Official Artist</title>
+
+<meta
+  name="description"
+  content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock."
+>
+
+<title>SHADOW PINES — Music</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 <style>
+
+/* =========================================================
+   ROOT
+========================================================= */
 
 :root{
   --bg:#050505;
   --panel:rgba(255,255,255,.055);
   --panel2:rgba(255,255,255,.085);
   --line:rgba(255,255,255,.16);
+
   --text:#fff;
   --muted:#aaa5b1;
+
   --purple:#9b35ff;
   --purple2:#6f19d8;
+
   --max:1180px;
 }
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -38,180 +60,333 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
+
   font-family:Inter,Arial,sans-serif;
+
   overflow-x:hidden;
 }
 
 body:before{
   content:"";
+
   position:fixed;
   inset:0;
+
   z-index:-2;
+
   background:
-    radial-gradient(circle at 68% 12%,rgba(146,42,255,.20),transparent 28%),
-    radial-gradient(circle at 15% 30%,rgba(92,24,170,.12),transparent 30%),
-    linear-gradient(180deg,#080609 0%,#030303 75%);
+    radial-gradient(
+      circle at 68% 12%,
+      rgba(146,42,255,.20),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(92,24,170,.12),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      180deg,
+      #080609 0%,
+      #030303 75%
+    );
 }
 
 body:after{
   content:"";
+
   position:fixed;
   inset:0;
+
   z-index:-1;
+
   pointer-events:none;
+
   opacity:.16;
+
   background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
+
   background-size:70px 70px;
-  mask-image:linear-gradient(to bottom,black,transparent 75%);
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 75%
+    );
 }
 
 .container{
-  width:min(calc(100% - 48px),var(--max));
+  width:min(
+    calc(100% - 48px),
+    var(--max)
+  );
+
   margin:auto;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
   min-height:650px;
+
   display:grid;
+
   grid-template-columns:.9fr 1.1fr;
+
   gap:65px;
-  align-items:center;
-  padding:42px 0 55px;
+
+  align-items:start;
+
+  padding:55px 0 55px;
 }
+
+
+/* LEFT SIDE */
 
 .hero-copy{
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
-}
 
-.eyebrow,
-.section-kicker{
-  font-size:11px;
-  letter-spacing:.28em;
-  color:#ddd;
-  text-transform:uppercase;
-  font-weight:700;
+  padding-top:0;
 }
 
 
-/* =========================
+/* =========================================================
    ARTIST PHOTO
-========================= */
+========================================================= */
 
 .artist-photo{
-  width:150px;
-  height:150px;
+  width:140px;
+  height:140px;
+
   object-fit:cover;
+
   border-radius:50%;
+
   border:2px solid var(--purple);
+
   box-shadow:
     0 0 25px rgba(155,53,255,.30),
     0 0 60px rgba(155,53,255,.15);
-  margin-bottom:25px;
+
+  margin-bottom:20px;
+
   display:block;
 }
 
-h1{
-  font-size:clamp(54px,7vw,96px);
-  line-height:.85;
-  letter-spacing:-.065em;
-  margin:18px 0 5px;
-  font-weight:800;
+
+/* =========================================================
+   ARTIST NAME
+========================================================= */
+
+.artist-name{
+  font-family:cursive;
+
+  font-size:clamp(
+    46px,
+    5vw,
+    68px
+  );
+
+  color:#fff;
+
+  line-height:1;
+
+  margin:4px 0 0;
+
+  letter-spacing:0;
+
+  font-weight:500;
 }
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
 
 .signature{
   font-family:cursive;
-  font-size:clamp(38px,5vw,62px);
+
+  font-size:clamp(
+    38px,
+    5vw,
+    58px
+  );
+
   color:#a63cff;
+
   transform:rotate(-5deg);
+
   display:block;
-  margin:3px 0 25px;
+
+  margin:5px 0 18px;
 }
 
+
+/* =========================================================
+   BIO
+========================================================= */
+
 .bio{
-  max-width:470px;
-  color:#ddd;
-  line-height:1.65;
-  font-size:15px;
+  max-width:500px;
+
+  color:#d8d4dc;
+
+  line-height:1.7;
+
+  font-size:14px;
+
+  margin:0;
 }
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
 
 .socials{
   display:flex;
-  gap:12px;
-  margin-top:28px;
+
+  gap:22px;
+
+  margin-top:25px;
+
   flex-wrap:wrap;
 }
 
 .socials a{
-  width:47px;
-  height:47px;
+  width:68px;
+  height:68px;
+
   border:1px solid var(--line);
-  border-radius:50%;
+
+  border-radius:16px;
+
   display:grid;
+
   place-items:center;
+
   color:white;
+
   text-decoration:none;
+
   background:rgba(255,255,255,.035);
-  font-weight:800;
+
   transition:.25s;
+
+  overflow:hidden;
 }
 
 .socials a:hover{
   border-color:#a63cff;
-  box-shadow:0 0 25px rgba(155,53,255,.3);
-  transform:translateY(-3px);
+
+  box-shadow:
+    0 0 30px rgba(155,53,255,.30);
+
+  transform:translateY(-4px);
+}
+
+.socials img{
+  width:42px;
+  height:42px;
+
+  object-fit:contain;
+
+  display:block;
 }
 
 
-/* =========================
-   VIDEO
-========================= */
+/* =========================================================
+   VIDEO SIDE
+========================================================= */
+
+.hero-video-column{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:stretch;
+
+  padding-top:0;
+}
 
 .hero-video{
   position:relative;
+
   border:1px solid rgba(183,91,255,.65);
+
   border-radius:17px;
+
   overflow:hidden;
+
   background:#000;
-  box-shadow:0 0 55px rgba(126,24,210,.16);
+
+  box-shadow:
+    0 0 55px rgba(126,24,210,.16);
 }
 
 .hero-video:before{
   content:"";
+
   position:absolute;
+
   inset:0;
-  box-shadow:inset 0 0 35px rgba(171,68,255,.2);
+
+  box-shadow:
+    inset 0 0 35px rgba(171,68,255,.2);
+
   pointer-events:none;
+
   z-index:2;
 }
 
 .video-ratio{
   position:relative;
+
   aspect-ratio:16/9;
 }
 
 .video-ratio iframe{
   position:absolute;
+
   inset:0;
+
   width:100%;
   height:100%;
+
   border:0;
 }
 
 .video-label{
   text-align:center;
+
   color:#b7b1bb;
+
   font-size:10px;
+
   letter-spacing:.18em;
+
   text-transform:uppercase;
+
   padding:15px 0 3px;
 }
 
@@ -220,71 +395,171 @@ h1{
 }
 
 
-/* =========================
+/* =========================================================
+   VIDEO SOCIALS
+========================================================= */
+
+.video-socials{
+  display:flex;
+
+  justify-content:center;
+
+  gap:28px;
+
+  margin-top:25px;
+}
+
+.video-socials a{
+  width:78px;
+  height:78px;
+
+  display:grid;
+
+  place-items:center;
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,.035);
+
+  text-decoration:none;
+
+  transition:.25s;
+}
+
+.video-socials a:hover{
+  transform:translateY(-4px);
+
+  border-color:#a63cff;
+
+  box-shadow:
+    0 0 30px rgba(155,53,255,.30);
+}
+
+.video-socials img{
+  width:52px;
+  height:52px;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
    SECTIONS
-========================= */
+========================================================= */
 
 .section{
   text-align:center;
+
   padding:35px 0 25px;
 }
 
 .section-title{
   font-size:25px;
+
   letter-spacing:.18em;
+
   font-weight:700;
+
   margin:9px 0;
+
   text-transform:uppercase;
 }
 
 .section-sub{
   color:#aaa;
+
   font-size:11px;
+
   letter-spacing:.24em;
+
   text-transform:uppercase;
 }
 
+.section-kicker{
+  font-size:11px;
 
-/* =========================
-   STREAMING PLATFORMS
-========================= */
+  letter-spacing:.28em;
+
+  color:#ddd;
+
+  text-transform:uppercase;
+
+  font-weight:700;
+}
+
+
+/* =========================================================
+   STREAMING
+========================================================= */
 
 .stream-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:14px;
+
   margin-top:25px;
 }
 
 .stream{
   min-height:74px;
+
   display:flex;
+
   align-items:center;
+
   gap:14px;
+
   padding:12px 16px;
+
   border:1px solid var(--line);
+
   border-radius:12px;
+
   color:#fff;
+
   text-decoration:none;
+
   background:rgba(255,255,255,.035);
+
   transition:.25s;
+
   position:relative;
+
   overflow:hidden;
 }
 
 .stream:after{
   content:"";
+
   position:absolute;
+
   inset:auto 0 0;
+
   height:2px;
-  background:linear-gradient(90deg,transparent,#9b35ff,transparent);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #9b35ff,
+      transparent
+    );
+
   transform:translateX(-100%);
+
   transition:.35s;
 }
 
 .stream:hover{
   background:var(--panel2);
+
   transform:translateY(-3px);
+
   border-color:#70408f;
 }
 
@@ -293,92 +568,29 @@ h1{
 }
 
 .platform-icon{
-  width:42px;
-  height:42px;
+  width:38px;
+  height:38px;
+
   border-radius:11px;
+
   display:grid;
+
   place-items:center;
+
+  font-weight:800;
+
   background:#111;
+
   border:1px solid #333;
-  flex-shrink:0;
+
   overflow:hidden;
-  transition:.25s;
 }
 
-.platform-icon svg{
-  width:25px;
-  height:25px;
-  display:block;
-}
+.platform-icon img{
+  width:26px;
+  height:26px;
 
-.stream:hover .platform-icon{
-  transform:scale(1.06);
-}
-
-
-/* Spotify */
-
-.spotify-icon{
-  color:#1DB954;
-}
-
-.stream:hover .spotify-icon{
-  filter:drop-shadow(0 0 7px rgba(29,185,84,.65));
-}
-
-
-/* Apple Music */
-
-.apple-icon{
-  color:#FA243C;
-}
-
-.stream:hover .apple-icon{
-  filter:drop-shadow(0 0 7px rgba(250,36,60,.65));
-}
-
-
-/* YouTube */
-
-.youtube-icon{
-  color:#FF0000;
-}
-
-.stream:hover .youtube-icon{
-  filter:drop-shadow(0 0 7px rgba(255,0,0,.65));
-}
-
-
-/* SoundCloud */
-
-.soundcloud-icon{
-  color:#FF5500;
-}
-
-.stream:hover .soundcloud-icon{
-  filter:drop-shadow(0 0 7px rgba(255,85,0,.65));
-}
-
-
-/* TIDAL */
-
-.tidal-icon{
-  color:#ffffff;
-}
-
-.stream:hover .tidal-icon{
-  filter:drop-shadow(0 0 7px rgba(255,255,255,.55));
-}
-
-
-/* Deezer */
-
-.deezer-icon{
-  color:#A238FF;
-}
-
-.stream:hover .deezer-icon{
-  filter:drop-shadow(0 0 7px rgba(162,56,255,.65));
+  object-fit:contain;
 }
 
 .stream strong{
@@ -387,150 +599,227 @@ h1{
 
 .stream small{
   display:block;
+
   color:#999;
+
   margin-top:3px;
+
   font-size:10px;
 }
 
 .arrow{
   margin-left:auto;
+
   color:#aaa;
+
   font-size:24px;
 }
 
 
-/* =========================
+/* =========================================================
    NEW RELEASE
-========================= */
+========================================================= */
 
-.release{
-  margin:20px 0 55px;
-  padding:24px;
-  display:grid;
-  grid-template-columns:300px 1fr;
-  gap:35px;
-  align-items:center;
-  border:1px solid var(--line);
+.release-section{
+  margin:25px 0 55px;
+
+  padding:32px;
+
+  border:1px solid #8d28e7;
+
   border-radius:18px;
+
   background:
     linear-gradient(
       120deg,
       rgba(91,26,129,.25),
       rgba(255,255,255,.025)
     );
-  box-shadow:0 20px 70px rgba(0,0,0,.3);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.3);
+
+  text-align:center;
 }
 
-.cover{
-  width:100%;
-  aspect-ratio:1;
-  object-fit:cover;
-  border-radius:12px;
-  background:#17121c;
+.release-section .section-kicker{
+  color:#bd73ff;
 }
 
-.release-copy{
-  text-align:left;
-}
+.release-title{
+  font-size:38px;
 
-.release-copy .section-kicker{
-  color:#b66cff;
-}
+  letter-spacing:.14em;
 
-.release h2{
-  font-size:42px;
-  letter-spacing:.12em;
-  margin:14px 0 10px;
-}
+  margin:12px 0 8px;
 
-.release p{
-  color:#aaa;
-  line-height:1.6;
-}
-
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:22px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  color:#fff;
-  border:1px solid var(--line);
-  font-size:11px;
   font-weight:800;
-  letter-spacing:.1em;
 }
 
-.btn.primary{
-  border:0;
-  background:linear-gradient(135deg,#a638ff,#6818cf);
-  box-shadow:0 12px 35px rgba(130,28,225,.28);
+.release-subtitle{
+  color:#aaa;
+
+  font-size:12px;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+
+  margin-bottom:28px;
 }
 
 
-/* =========================
-   SHOWS
-========================= */
+/* =========================================================
+   COUNTDOWN
+========================================================= */
 
-.shows{
-  margin:0 0 25px;
+.countdown{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:14px;
+
+  max-width:720px;
+
+  margin:0 auto;
+}
+
+.count-box{
+  padding:20px 12px;
+
   border:1px solid var(--line);
-  border-radius:15px;
-  padding:24px;
-  display:flex;
-  gap:25px;
-  align-items:center;
-  background:var(--panel);
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,.035);
 }
 
-.show-icon{
-  font-size:28px;
-}
-
-.shows strong{
-  font-size:16px;
-}
-
-.shows span{
+.count-number{
   display:block;
+
+  font-size:38px;
+
+  line-height:1;
+
+  font-weight:800;
+
+  color:#fff;
+
+  text-shadow:
+    0 0 20px rgba(166,60,255,.25);
+}
+
+.count-label{
+  display:block;
+
+  margin-top:8px;
+
   color:#999;
-  margin-top:5px;
-  font-size:13px;
+
+  font-size:9px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+}
+
+.release-date{
+  margin-top:25px;
+
+  color:#b66cff;
+
+  font-size:11px;
+
+  letter-spacing:.2em;
+
+  text-transform:uppercase;
 }
 
 
-/* =========================
+/* =========================================================
+   RELEASE COVER PLACEHOLDER
+========================================================= */
+
+.release-cover{
+  display:none;
+
+  width:260px;
+
+  max-width:100%;
+
+  aspect-ratio:1;
+
+  object-fit:cover;
+
+  border-radius:14px;
+
+  margin:28px auto 0;
+
+  border:1px solid var(--line);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   OUT NOW
+========================================================= */
+
+.out-now{
+  display:none;
+
+  font-size:46px;
+
+  font-weight:800;
+
+  letter-spacing:.12em;
+
+  color:#fff;
+
+  text-shadow:
+    0 0 30px rgba(166,60,255,.55);
+
+  margin:20px 0;
+}
+
+
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 .contact{
   margin:20px 0 50px;
+
   padding:25px;
+
   border:1px solid #8d28e7;
+
   border-radius:15px;
+
   background:
     linear-gradient(
       90deg,
       rgba(104,19,151,.24),
       rgba(24,6,38,.25)
     );
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:25px;
 }
 
 .contact h3{
   margin:6px 0 0;
+
   font-size:24px;
+
   letter-spacing:.12em;
 }
 
@@ -538,176 +827,265 @@ h1{
   color:#bd73ff;
 }
 
+.btn{
+  display:inline-flex;
 
-/* =========================
+  align-items:center;
+
+  justify-content:center;
+
+  padding:14px 20px;
+
+  border-radius:10px;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  border:1px solid var(--line);
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:.1em;
+}
+
+.btn.primary{
+  border:0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a638ff,
+      #6818cf
+    );
+
+  box-shadow:
+    0 12px 35px rgba(130,28,225,.28);
+}
+
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
   border-top:1px solid rgba(255,255,255,.12);
+
   padding:30px 0 35px;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   color:#777;
+
   font-size:10px;
+
   letter-spacing:.1em;
+
   text-transform:uppercase;
 }
 
 .logo{
   font-family:cursive;
+
   color:#fff;
+
   font-size:28px;
+
   text-transform:none;
+
   letter-spacing:0;
 }
 
 
-/* =========================
+/* =========================================================
    BACK TO TOP
-========================= */
+========================================================= */
 
 .top{
   position:fixed;
+
   right:25px;
+
   bottom:25px;
+
   width:48px;
+
   height:48px;
+
   border:1px solid var(--line);
+
   background:#080808cc;
+
   color:#fff;
+
   border-radius:50%;
+
   cursor:pointer;
+
   backdrop-filter:blur(10px);
 }
 
 
-/* =========================
+/* =========================================================
    ANIMATION
-========================= */
+========================================================= */
 
 .fade{
   opacity:0;
+
   transform:translateY(18px);
-  transition:opacity .7s,transform .7s;
+
+  transition:
+    opacity .7s,
+    transform .7s;
 }
 
 .fade.show{
   opacity:1;
+
   transform:none;
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media(max-width:900px){
 
   .hero{
     grid-template-columns:1fr;
+
     gap:35px;
+
     min-height:auto;
+
     padding-top:35px;
   }
 
   .hero-copy{
     text-align:center;
+
     align-items:center;
   }
 
   .bio{
     margin-left:auto;
+
     margin-right:auto;
   }
 
-  .socials{
-    justify-content:center;
-  }
-
   .stream-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
-  .release{
-    grid-template-columns:220px 1fr;
-  }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:600px){
 
   .container{
-    width:min(calc(100% - 28px),520px);
+    width:min(
+      calc(100% - 28px),
+      520px
+    );
   }
 
   .hero{
     padding-top:25px;
   }
 
-  .eyebrow{
-    font-size:9px;
-  }
-
   .artist-photo{
     width:120px;
     height:120px;
-    margin-bottom:20px;
   }
 
-  h1{
-    font-size:54px;
+  .artist-name{
+    font-size:48px;
   }
 
   .signature{
     font-size:40px;
   }
 
+  .bio{
+    font-size:13px;
+
+    line-height:1.65;
+  }
+
+  .socials{
+    justify-content:center;
+  }
+
+  .video-socials{
+    gap:18px;
+  }
+
+  .video-socials a{
+    width:70px;
+    height:70px;
+  }
+
+  .video-socials img{
+    width:46px;
+    height:46px;
+  }
+
   .stream-grid{
     grid-template-columns:1fr;
   }
 
-  .release{
-    grid-template-columns:1fr;
-    padding:15px;
+  .countdown{
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
-  .cover{
-    max-width:300px;
-    margin:auto;
+  .count-number{
+    font-size:30px;
   }
 
-  .release-copy{
-    text-align:center;
+  .release-section{
+    padding:22px 15px;
   }
 
-  .buttons{
-    justify-content:center;
+  .release-title{
+    font-size:28px;
   }
 
   .contact{
     display:block;
+
     text-align:center;
   }
 
   .contact .btn{
     margin-top:18px;
+
     width:100%;
   }
 
   footer{
     display:block;
+
     text-align:center;
   }
 
   .logo{
     margin-bottom:14px;
   }
+
 }
 
 </style>
@@ -721,159 +1099,62 @@ footer{
 <div class="container">
 
 
-<!-- =========================
-     HERO / ARTIST
-========================= -->
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <section class="hero">
 
+
+  <!-- LEFT -->
   <div class="hero-copy fade">
+
 
     <img
       class="artist-photo"
       src="./Logo-Foto-Perfil.png"
-      alt="Shadow Pines">
+      alt="Shadow Pines"
+    >
 
-    <div class="eyebrow">
-      Welcome to the world of
+
+    <div class="artist-name">
+      SHADOW PINES
     </div>
 
-    <h1>
-      SHADOW PINES
-    </h1>
 
     <span class="signature">
       Music
     </span>
 
-    <p class="bio">
-      ```html
-<p class="bio">
-  Shadow Pines is an independent and anonymous band whose existence
-  manifests itself through a soundscape conceived between the penumbra
-  of memory, the ephemerality of the present, and the uncertainty of
-  what is yet to come. Interweaving the realms of indie rock and
-  alternative rock, the band constructs sonic landscapes where
-  compelling melodies and introspective atmospheres converge into a
-  singular language.
 
-  Their compositions transmute experiences, emotions, and recollections
-  into sonic matter, exploring the nuances of that which remains
-  unspoken. Shadow Pines does not seek merely to be heard, but to
-  establish a connection — to evoke emotions, awaken memories, and
-  leave the listener with the lingering impression of something that,
-  though intangible, endures.
-</p>
-```
+    <p class="bio">
+
+      Shadow Pines is an independent and anonymous band whose
+      existence manifests itself through a soundscape conceived
+      between the penumbra of memory, the ephemerality of the
+      present, and the uncertainty of what is yet to come.
+      Interweaving the realms of indie rock and alternative rock,
+      the band constructs sonic landscapes where compelling
+      melodies and introspective atmospheres converge into a
+      singular language.
+
+      Their compositions transmute experiences, emotions, and
+      recollections into sonic matter, exploring the nuances of
+      that which remains unspoken. Shadow Pines does not seek
+      merely to be heard, but to establish a connection — to
+      evoke emotions, awaken memories, and leave the listener
+      with the lingering impression of something that, though
+      intangible, endures.
 
     </p>
 
 
-    <!-- SOCIAL MEDIA -->
-
-    <nav class="socials" aria-label="Social media">
-
-      <!-- YouTube -->
-
-      <a
-        href="https://www.youtube.com/@ShadowPines-band"
-        target="_blank"
-        rel="noopener"
-        aria-label="YouTube">
-
-        <svg
-          viewBox="0 0 24 24"
-          width="21"
-          height="21"
-          aria-hidden="true">
-
-          <rect
-            x="3"
-            y="6"
-            width="18"
-            height="12"
-            rx="4"
-            fill="#FF0000"/>
-
-          <path
-            d="M10 9l5 3-5 3z"
-            fill="#ffffff"/>
-
-        </svg>
-
-      </a>
-
-
-      <!-- Instagram -->
-
-      <a
-        href="https://www.instagram.com/shadowpinesband"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram">
-
-        <svg
-          viewBox="0 0 24 24"
-          width="21"
-          height="21"
-          aria-hidden="true">
-
-          <defs>
-
-            <linearGradient
-              id="instagramGradient"
-              x1="0"
-              y1="1"
-              x2="1"
-              y2="0">
-
-              <stop offset="0%" stop-color="#F58529"/>
-              <stop offset="35%" stop-color="#DD2A7B"/>
-              <stop offset="65%" stop-color="#8134AF"/>
-              <stop offset="100%" stop-color="#515BD4"/>
-
-            </linearGradient>
-
-          </defs>
-
-          <rect
-            x="4"
-            y="4"
-            width="16"
-            height="16"
-            rx="5"
-            fill="none"
-            stroke="url(#instagramGradient)"
-            stroke-width="2"/>
-
-          <circle
-            cx="12"
-            cy="12"
-            r="3.5"
-            fill="none"
-            stroke="url(#instagramGradient)"
-            stroke-width="2"/>
-
-          <circle
-            cx="17.2"
-            cy="6.8"
-            r="1"
-            fill="#E1306C"/>
-
-        </svg>
-
-      </a>
-
-    </nav>
-
   </div>
 
 
-  <!-- =========================
-       VIDEO
-  ========================= -->
+  <!-- RIGHT -->
+  <div class="hero-video-column fade">
 
-  <div class="fade">
 
     <div class="hero-video">
 
@@ -881,7 +1162,7 @@ footer{
 
         <iframe
           src="https://www.youtube.com/embed/mLKqhcP11oY?autoplay=1&mute=1&playsinline=1&rel=0"
-          title="Shadow Pines - After The Rain"
+          title="Shadow Pines - Official Music Video"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
         </iframe>
@@ -890,424 +1171,445 @@ footer{
 
     </div>
 
+
     <div class="video-label">
+
       <span>●</span>
+
       Official video • watch now
+
     </div>
+
+
+    <!-- SOCIALS BELOW VIDEO -->
+
+    <nav
+      class="video-socials"
+      aria-label="Shadow Pines social media"
+    >
+
+
+      <a
+        href="https://www.youtube.com/@ShadowPines-band"
+        target="_blank"
+        rel="noopener"
+        aria-label="Shadow Pines on YouTube"
+      >
+
+        <img
+          src="https://cdn.simpleicons.org/youtube/FF0000"
+          alt="YouTube"
+        >
+
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/shadowpinesband?igsh=a3E1YnphNHB1Z3Uy"
+        target="_blank"
+        rel="noopener"
+        aria-label="Shadow Pines on Instagram"
+      >
+
+        <img
+          src="https://cdn.simpleicons.org/instagram/E4405F"
+          alt="Instagram"
+        >
+
+      </a>
+
+
+    </nav>
+
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     STREAMING
-========================= -->
+<!-- =======================================================
+     LISTEN NOW
+======================================================= -->
 
 <section class="section fade">
+
 
   <div class="section-kicker">
     ♪
   </div>
 
+
   <div class="section-title">
     Listen Now
   </div>
 
+
   <div class="section-sub">
-    Shadow Pines on streaming platforms
+    Available on selected platforms
   </div>
 
 
   <div class="stream-grid">
 
 
-    <!-- =========================
-         SPOTIFY
-    ========================= -->
+    <!-- SPOTIFY -->
 
     <a
       class="stream"
       href="https://open.spotify.com/intl-pt/artist/2Z7y9G3WkE10uy8NMJJXgH?si=kqOnjvxfQMauC9Yd1vGcjQ"
       target="_blank"
-      rel="noopener">
+      rel="noopener"
+    >
 
-      <div class="platform-icon spotify-icon">
+      <div class="platform-icon">
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            fill="#1DB954"/>
-
-          <path
-            d="M7 9.5c3.5-1 7.2-.7 10.2.8"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="1.8"
-            stroke-linecap="round"/>
-
-          <path
-            d="M7.5 12.5c2.8-.7 5.7-.4 8.2.7"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="1.8"
-            stroke-linecap="round"/>
-
-          <path
-            d="M8.5 15.2c2-.4 4-.2 5.8.5"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="1.8"
-            stroke-linecap="round"/>
-
-        </svg>
+        <img
+          src="https://cdn.simpleicons.org/spotify/1ED760"
+          alt="Spotify"
+        >
 
       </div>
 
       <div>
+
         <strong>Spotify</strong>
+
         <small>Listen now</small>
+
       </div>
 
-      <div class="arrow">›</div>
+      <div class="arrow">
+        ›
+      </div>
 
     </a>
 
 
-    <!-- =========================
-         APPLE MUSIC
-    ========================= -->
+    <!-- APPLE MUSIC -->
 
     <a
       class="stream"
       href="https://music.apple.com/pt/song/after-the-rain/6801570997"
       target="_blank"
-      rel="noopener">
+      rel="noopener"
+    >
 
-      <div class="platform-icon apple-icon">
+      <div class="platform-icon">
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-
-          <path
-            d="M16.7 4.2v10.5a3.2 3.2 0 1 1-1.5-2.7V7.1l-6.1 1.5v8.2a3.2 3.2 0 1 1-1.5-2.7V6.9z"
-            fill="#FA243C"/>
-
-        </svg>
+        <img
+          src="https://cdn.simpleicons.org/applemusic/FA243C"
+          alt="Apple Music"
+        >
 
       </div>
 
       <div>
+
         <strong>Apple Music</strong>
-        <small>After The Rain</small>
+
+        <small>Listen now</small>
+
       </div>
 
-      <div class="arrow">›</div>
+      <div class="arrow">
+        ›
+      </div>
 
     </a>
 
 
-    <!-- =========================
-         YOUTUBE
-    ========================= -->
+    <!-- YOUTUBE MUSIC -->
 
     <a
       class="stream"
       href="https://www.youtube.com/@ShadowPines-band"
       target="_blank"
-      rel="noopener">
+      rel="noopener"
+    >
 
-      <div class="platform-icon youtube-icon">
+      <div class="platform-icon">
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-
-          <rect
-            x="2.5"
-            y="5.5"
-            width="19"
-            height="13"
-            rx="4"
-            fill="#FF0000"/>
-
-          <path
-            d="M10 9l5 3-5 3z"
-            fill="#ffffff"/>
-
-        </svg>
+        <img
+          src="https://cdn.simpleicons.org/youtubemusic/FF0000"
+          alt="YouTube Music"
+        >
 
       </div>
 
       <div>
-        <strong>YouTube</strong>
-        <small>Watch now</small>
-      </div>
 
-      <div class="arrow">›</div>
+        <strong>YouTube Music</strong>
 
-    </a>
-
-
-    <!-- =========================
-         SOUNDCLOUD
-    ========================= -->
-
-    <a
-      class="stream"
-      href="https://on.soundcloud.com/QMr9QQrwe3h7EvgtGM"
-      target="_blank"
-      rel="noopener">
-
-      <div class="platform-icon soundcloud-icon">
-
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true">
-
-          <path
-            d="M4 17h1V11H4zm2 0h1V9H6zm2 0h1V7H8zm2 0h1V6h1.5a5 5 0 0 1 0 10H10zm-7 0h1v-4H3zm13.5 0H20a2.5 2.5 0 0 0 0-5 4.5 4.5 0 0 0-8.5-1.8V17z"
-            fill="#FF5500"/>
-
-        </svg>
-
-      </div>
-
-      <div>
-        <strong>SoundCloud</strong>
         <small>Listen now</small>
+
       </div>
 
-      <div class="arrow">›</div>
+      <div class="arrow">
+        ›
+      </div>
 
     </a>
 
 
-    <!-- =========================
-         TIDAL
-    ========================= -->
-
-    <a
-      class="stream"
-      href="https://tidal.com/artist/84417063/u"
-      target="_blank"
-      rel="noopener">
-
-      <div class="platform-icon tidal-icon">
-
-        <svg
-          viewBox="0 0 48 24"
-          aria-hidden="true">
-
-          <polygon
-            points="8,2 14,8 8,14 2,8"
-            fill="#ffffff"/>
-
-          <polygon
-            points="20,2 26,8 20,14 14,8"
-            fill="#ffffff"/>
-
-          <polygon
-            points="32,2 38,8 32,14 26,8"
-            fill="#ffffff"/>
-
-          <polygon
-            points="14,10 20,16 14,22 8,16"
-            fill="#ffffff"/>
-
-          <polygon
-            points="26,10 32,16 26,22 20,16"
-            fill="#ffffff"/>
-
-        </svg>
-
-      </div>
-
-      <div>
-        <strong>TIDAL</strong>
-        <small>Listen now</small>
-      </div>
-
-      <div class="arrow">›</div>
-
-    </a>
-
-
-    <!-- =========================
-         DEEZER
-    ========================= -->
+    <!-- DEEZER -->
 
     <a
       class="stream"
       href="https://link.deezer.com/s/34eiJ3u5Hvwa5yLrybr26"
       target="_blank"
-      rel="noopener">
+      rel="noopener"
+    >
 
-      <div class="platform-icon deezer-icon">
+      <div class="platform-icon">
 
-        <svg
-          viewBox="0 0 48 24"
-          aria-hidden="true">
-
-          <rect x="2" y="15" width="4" height="5" fill="#FF0000"/>
-          <rect x="8" y="13" width="4" height="7" fill="#FF5500"/>
-          <rect x="14" y="11" width="4" height="9" fill="#FFAA00"/>
-          <rect x="20" y="9" width="4" height="11" fill="#FFD500"/>
-          <rect x="26" y="7" width="4" height="13" fill="#00C7FF"/>
-          <rect x="32" y="5" width="4" height="15" fill="#6F2CFF"/>
-          <rect x="38" y="3" width="4" height="17" fill="#B92CFF"/>
-
-        </svg>
+        <img
+          src="https://cdn.simpleicons.org/deezer/FF0092"
+          alt="Deezer"
+        >
 
       </div>
 
       <div>
+
         <strong>Deezer</strong>
+
         <small>Listen now</small>
+
       </div>
 
-      <div class="arrow">›</div>
+      <div class="arrow">
+        ›
+      </div>
 
     </a>
 
+
+    <!-- TIDAL -->
+
+    <a
+      class="stream"
+      href="https://tidal.com/artist/84417063/u"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="platform-icon">
+
+        <img
+          src="https://cdn.simpleicons.org/tidal/FFFFFF"
+          alt="TIDAL"
+        >
+
+      </div>
+
+      <div>
+
+        <strong>TIDAL</strong>
+
+        <small>Listen now</small>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- SOUNDCLOUD -->
+
+    <a
+      class="stream"
+      href="https://on.soundcloud.com/QMr9QQrwe3h7EvgtGM"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="platform-icon">
+
+        <img
+          src="https://cdn.simpleicons.org/soundcloud/FF5500"
+          alt="SoundCloud"
+        >
+
+      </div>
+
+      <div>
+
+        <strong>SoundCloud</strong>
+
+        <small>Listen now</small>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
   </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =======================================================
      NEW RELEASE
-========================= -->
+======================================================= -->
 
-<section class="release fade">
-
-  <img
-    class="cover"
-    src="./Capa-Single-After-the-Rain.png"
-    alt="After The Rain cover">
+<section class="release-section fade">
 
 
-  <div class="release-copy">
-
-    <div class="section-kicker">
-      New Release
-    </div>
-
-    <h2>
-      AFTER THE RAIN
-    </h2>
-
-    <p>
-      The new single is now available.
-      Choose where you want to listen.
-    </p>
-
-
-    <div class="buttons">
-
-      <a
-        class="btn primary"
-        href="https://open.spotify.com/intl-pt/artist/2Z7y9G3WkE10uy8NMJJXgH?si=kqOnjvxfQMauC9Yd1vGcjQ"
-        target="_blank"
-        rel="noopener">
-
-        ◉ LISTEN ON SPOTIFY
-
-      </a>
-
-      <a
-        class="btn"
-        href="https://music.apple.com/pt/song/after-the-rain/6801570997"
-        target="_blank"
-        rel="noopener">
-
-         APPLE MUSIC
-
-      </a>
-
-      <a
-        class="btn"
-        href="https://www.youtube.com/@ShadowPines-band"
-        target="_blank"
-        rel="noopener">
-
-        ▶ YOUTUBE
-
-      </a>
-
-    </div>
-
+  <div class="section-kicker">
+    New Release
   </div>
 
-</section>
+
+  <div class="release-title">
+    COMING SOON
+  </div>
 
 
-<!-- =========================
-     UPCOMING SHOWS
-========================= -->
+  <div class="release-subtitle">
+    New music is coming soon
+  </div>
 
-<section class="fade">
+
+  <!-- COUNTDOWN -->
 
   <div
-    class="section"
-    style="padding-top:0">
-
-    <div class="section-kicker">
-      Tour
-    </div>
-
-    <div
-      class="section-title"
-      style="font-size:18px">
-
-      Upcoming Shows
-
-    </div>
-
-  </div>
+    class="countdown"
+    id="countdown"
+  >
 
 
-  <div class="shows">
+    <div class="count-box">
 
-    <div class="show-icon">
-      ▣
-    </div>
+      <span
+        class="count-number"
+        id="days"
+      >
+        00
+      </span>
 
-    <div>
-
-      <strong>
-        Coming Soon
-      </strong>
-
-      <span>
-        New dates will be announced soon.
-        Follow Shadow Pines on social media for updates.
+      <span class="count-label">
+        Days
       </span>
 
     </div>
 
+
+    <div class="count-box">
+
+      <span
+        class="count-number"
+        id="hours"
+      >
+        00
+      </span>
+
+      <span class="count-label">
+        Hours
+      </span>
+
+    </div>
+
+
+    <div class="count-box">
+
+      <span
+        class="count-number"
+        id="minutes"
+      >
+        00
+      </span>
+
+      <span class="count-label">
+        Minutes
+      </span>
+
+    </div>
+
+
+    <div class="count-box">
+
+      <span
+        class="count-number"
+        id="seconds"
+      >
+        00
+      </span>
+
+      <span class="count-label">
+        Seconds
+      </span>
+
+    </div>
+
+
   </div>
+
+
+  <!-- OUT NOW -->
+
+  <div
+    class="out-now"
+    id="outNow"
+  >
+    OUT NOW
+  </div>
+
+
+  <div class="release-date">
+
+    01 SEPTEMBER 2026 · 09:00 · LISBON TIME
+
+  </div>
+
+
+  <!--
+  ==========================================================
+  FUTURE RELEASE COVER
+
+  When you have the cover, upload it to the same folder
+  as index.html and change:
+
+  display:none;
+
+  to:
+
+  display:block;
+
+  Then change the image filename below.
+
+  ==========================================================
+  -->
+
+  <img
+    class="release-cover"
+    src="./Capa-Proximo-Lancamento.png"
+    alt="Shadow Pines new release cover"
+  >
+
 
 </section>
 
 
-<!-- =========================
+<!-- =======================================================
      CONTACT
-========================= -->
+======================================================= -->
 
 <section class="contact fade">
+
 
   <div>
 
     <div class="section-kicker">
-      Contact the team
+      For shows, partnerships and bookings
     </div>
+
 
     <h3>
       CONTACT THE TEAM
@@ -1318,61 +1620,70 @@ footer{
 
   <a
     class="btn primary"
-    href="mailto:shadowpinesband@gmail.com">
+    href="mailto:shadowpinesband@gmail.com"
+  >
 
-    ✈ CONTACT THE TEAM
+    ✈ GET IN TOUCH
 
   </a>
+
 
 </section>
 
 
-<!-- =========================
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================= -->
 
 <footer>
+
 
   <div class="logo">
     Shadow Pines
   </div>
 
+
   <div>
     © 2026 SHADOW PINES · All rights reserved
   </div>
 
+
 </footer>
+
 
 </div>
 
 </main>
 
 
-<!-- =========================
+<!-- =======================================================
      BACK TO TOP
-========================= -->
+======================================================= -->
 
 <button
   class="top"
   id="top"
-  aria-label="Back to top">
-
+  aria-label="Back to top"
+>
   ⌃
-
 </button>
 
 
 <script>
 
+/* =========================================================
+   FADE ANIMATION
+========================================================= */
+
 const observer = new IntersectionObserver(
 
   entries => {
 
-    entries.forEach(e => {
+    entries.forEach(entry => {
 
-      if(e.isIntersecting){
+      if(entry.isIntersecting){
 
-        e.target.classList.add('show');
+        entry.target.classList.add("show");
 
       }
 
@@ -1388,19 +1699,136 @@ const observer = new IntersectionObserver(
 
 
 document
-  .querySelectorAll('.fade')
-  .forEach(el => observer.observe(el));
+  .querySelectorAll(".fade")
+  .forEach(element => {
 
+    observer.observe(element);
+
+  });
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
 
 document
-  .getElementById('top')
+  .getElementById("top")
   .addEventListener(
-    'click',
-    () => window.scrollTo({
-      top:0,
-      behavior:'smooth'
-    })
+    "click",
+    () => {
+
+      window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+      });
+
+    }
   );
+
+
+/* =========================================================
+   COUNTDOWN
+=========================================================
+
+   RELEASE:
+   September 1, 2026
+   09:00 Lisbon time
+
+========================================================= */
+
+const releaseDate =
+  new Date(
+    "2026-09-01T09:00:00+01:00"
+  ).getTime();
+
+
+function updateCountdown(){
+
+  const now =
+    new Date().getTime();
+
+
+  const difference =
+    releaseDate - now;
+
+
+  const countdown =
+    document.getElementById("countdown");
+
+
+  const outNow =
+    document.getElementById("outNow");
+
+
+  if(difference <= 0){
+
+    countdown.style.display = "none";
+
+    outNow.style.display = "block";
+
+    return;
+
+  }
+
+
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+  const hours =
+    Math.floor(
+      (difference %
+      (1000 * 60 * 60 * 24)) /
+      (1000 * 60 * 60)
+    );
+
+
+  const minutes =
+    Math.floor(
+      (difference %
+      (1000 * 60 * 60)) /
+      (1000 * 60)
+    );
+
+
+  const seconds =
+    Math.floor(
+      (difference %
+      (1000 * 60)) /
+      1000
+    );
+
+
+  document.getElementById("days").textContent =
+    String(days).padStart(2,"0");
+
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2,"0");
+
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2,"0");
+
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
 
 </script>
 
