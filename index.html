@@ -5,9 +5,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08050d">
-<meta name="description" content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock.">
+<meta name="description" content="Shadow Pines — independent anonymous indie and alternative rock. Watch After The Rain and discover Silent Maps, arriving 1 September 2026.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://shadowpinesband-alt.github.io/shadowpines/">
+<link rel="icon" href="./favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="preload" as="image" href="./forest-1600.webp" type="image/webp">
 
-<title>SHADOW PINES — Band</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shadow Pines">
+<meta property="og:title" content="Shadow Pines — Indie & Alternative Rock">
+<meta property="og:description" content="Watch After The Rain and discover Silent Maps, arriving 1 September 2026.">
+<meta property="og:url" content="https://shadowpinesband-alt.github.io/shadowpines/">
+<meta property="og:image" content="https://shadowpinesband-alt.github.io/shadowpines/social-card.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shadow Pines — Indie & Alternative Rock">
+<meta name="twitter:description" content="Watch After The Rain and discover Silent Maps, arriving 1 September 2026.">
+<meta name="twitter:image" content="https://shadowpinesband-alt.github.io/shadowpines/social-card.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Shadow Pines",
+  "url": "https://shadowpinesband-alt.github.io/shadowpines/",
+  "description": "Independent anonymous indie and alternative rock band.",
+  "genre": ["Indie rock", "Alternative rock"],
+  "sameAs": [
+    "https://www.youtube.com/@ShadowPines-band",
+    "https://www.instagram.com/shadowpinesband"
+  ]
+}
+</script>
+
+<title>SHADOW PINES — Indie & Alternative Rock</title>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +116,10 @@ body:before{
       rgba(0,0,0,.92)
     ),
 
-    url("./forest.jpg");
+    image-set(
+      url("./forest-1600.webp") type("image/webp"),
+      url("./forest.jpg") type("image/jpeg")
+    );
 
   background-size:cover;
   background-position:center center;
@@ -1103,6 +1140,110 @@ footer{
 
 }
 
+
+
+/* =========================================================
+   ACCESSIBILITY AND CONVERSION
+========================================================= */
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.btn.secondary{
+  background:rgba(255,255,255,.045);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  border-color:#b86cff;
+}
+
+.btn:focus-visible,
+.stream:focus-visible,
+.video-socials a:focus-visible,
+.top:focus-visible,
+summary:focus-visible{
+  outline:3px solid #d2a6ff;
+  outline-offset:4px;
+}
+
+.bio-more{
+  width:100%;
+  max-width:500px;
+  margin-top:17px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+.bio-more summary{
+  width:max-content;
+  cursor:pointer;
+  color:#d7b3ff;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:10px;
+}
+
+.bio-more p{
+  margin:13px 0 0;
+}
+
+.release-cta-note{
+  margin:19px 0 0;
+  color:#ded2e9;
+  font-size:11px;
+  letter-spacing:.12em;
+  line-height:1.55;
+  text-transform:uppercase;
+}
+
+.release-cta-note strong{
+  color:#c58bff;
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+@media(max-width:600px){
+  .hero-actions{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .bio-more{
+    text-align:left;
+  }
+}
+
 </style>
 
 </head>
@@ -1132,7 +1273,12 @@ footer{
 
       <img
         class="artist-photo"
-        src="./Logo-Foto-Perfil.png"
+        src="./logo-256.webp"
+        srcset="./logo-256.webp 256w, ./logo-384.webp 384w"
+        sizes="(max-width: 600px) 85px, 105px"
+        width="105"
+        height="105"
+        decoding="async"
         alt="Shadow Pines"
       >
 
@@ -1140,9 +1286,9 @@ footer{
       <div class="artist-heading-text">
 
 
-        <div class="artist-name">
+        <h1 class="artist-name">
           SHADOW PINES
-        </div>
+        </h1>
 
 
         <span class="signature">
@@ -1159,27 +1305,36 @@ footer{
     <!-- BIO -->
 
     <p class="bio">
-
-      Shadow Pines is an independent and anonymous band whose
-      existence manifests itself through a soundscape conceived
-      between the penumbra of memory, the ephemerality of the
-      present, and the uncertainty of what is yet to come.
-
-      Interweaving the realms of indie rock and alternative rock,
-      the band constructs sonic landscapes where compelling
-      melodies and introspective atmospheres converge into a
-      singular language.
-
-      Their compositions transmute experiences, emotions, and
-      recollections into sonic matter, exploring the nuances of
-      that which remains unspoken.
-
-      Shadow Pines does not seek merely to be heard, but to
-      establish a connection — to evoke emotions, awaken
-      memories, and leave the listener with the lingering
-      impression of something that, though intangible, endures.
-
+      Shadow Pines is an independent and anonymous band creating
+      indie and alternative rock between memory, penumbra and what
+      remains unspoken. Watch the official video for <em>After The Rain</em>
+      and discover <em>Silent Maps</em>, arriving 01 September 2026.
     </p>
+
+    <div class="hero-actions" aria-label="Explore Shadow Pines">
+      <a
+        class="btn primary"
+        href="https://www.youtube.com/watch?v=mLKqhcP11oY"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WATCH AFTER THE RAIN
+      </a>
+      <a class="btn secondary" href="#silent-maps">
+        DISCOVER SILENT MAPS
+      </a>
+    </div>
+
+    <details class="bio-more">
+      <summary>About Shadow Pines</summary>
+      <p>
+        The band constructs sonic landscapes where compelling melodies
+        and introspective atmospheres converge into a singular language.
+        Their compositions transmute experiences, emotions and recollections
+        into sonic matter, leaving the listener with the lingering impression
+        of something that, though intangible, endures.
+      </p>
+    </details>
 
 
   </div>
@@ -1199,6 +1354,7 @@ footer{
 
 
         <iframe
+          loading="lazy"
           src="https://www.youtube.com/embed/mLKqhcP11oY?rel=0"
           title="Shadow Pines - Official Music Video"
           frameborder="0"
@@ -1242,6 +1398,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/youtube/FF0000"
+          loading="lazy"
+          decoding="async"
           alt="YouTube"
         >
 
@@ -1259,6 +1417,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/instagram/E4405F"
+          loading="lazy"
+          decoding="async"
           alt="Instagram"
         >
 
@@ -1286,9 +1446,9 @@ footer{
   </div>
 
 
-  <div class="section-title">
+  <h2 class="section-title">
     Listen Now
-  </div>
+  </h2>
 
 
   <div class="section-sub">
@@ -1312,6 +1472,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/spotify/1ED760"
+          loading="lazy"
+          decoding="async"
           alt="Spotify"
         >
 
@@ -1351,6 +1513,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/applemusic/FA243C"
+          loading="lazy"
+          decoding="async"
           alt="Apple Music"
         >
 
@@ -1390,6 +1554,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/youtubemusic/FF0000"
+          loading="lazy"
+          decoding="async"
           alt="YouTube Music"
         >
 
@@ -1429,6 +1595,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/deezer/FF0092"
+          loading="lazy"
+          decoding="async"
           alt="Deezer"
         >
 
@@ -1468,6 +1636,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/tidal/FFFFFF"
+          loading="lazy"
+          decoding="async"
           alt="TIDAL"
         >
 
@@ -1507,6 +1677,8 @@ footer{
 
         <img
           src="https://cdn.simpleicons.org/soundcloud/FF5500"
+          loading="lazy"
+          decoding="async"
           alt="SoundCloud"
         >
 
@@ -1543,7 +1715,7 @@ footer{
      SILENT MAPS
 ======================================================== -->
 
-<section class="release-section fade">
+<section class="release-section fade" id="silent-maps" aria-labelledby="silent-maps-title">
 
 
   <div class="section-kicker">
@@ -1551,9 +1723,9 @@ footer{
   </div>
 
 
-  <div class="release-title">
+  <h2 class="release-title" id="silent-maps-title">
     SILENT MAPS
-  </div>
+  </h2>
 
 
   <div class="release-subtitle">
@@ -1566,17 +1738,28 @@ footer{
 
     <img
       class="release-cover"
-      src="./Silent Maps.png"
-      alt="Silent Maps — Shadow Pines"
+      src="./silent-maps-640.webp"
+      srcset="./silent-maps-640.webp 640w, ./silent-maps-960.webp 960w"
+      sizes="(max-width: 600px) min(100vw - 58px, 280px), 280px"
+      width="640"
+      height="640"
+      loading="lazy"
+      decoding="async"
+      alt="Silent Maps cover art by Shadow Pines"
     >
 
 
     <div class="release-info">
 
 
+      <p class="sr-only">
+        <time datetime="2026-09-01T09:00:00+01:00">Silent Maps releases 01 September 2026 at 09:00 Lisbon time.</time>
+      </p>
+
       <div
         class="countdown"
         id="countdown"
+        aria-hidden="true"
       >
 
 
@@ -1656,10 +1839,15 @@ footer{
 
 
       <div class="release-date">
-
-        01 SEPTEMBER 2026 · 09:00 · LISBON TIME
-
+        <time datetime="2026-09-01T09:00:00+01:00">
+          01 SEPTEMBER 2026 · 09:00 · LISBON TIME
+        </time>
       </div>
+
+      <!-- Add the pre-save URL below when it is available. -->
+      <p class="release-cta-note" id="release-cta-note">
+        <strong>Pre-save link coming soon.</strong> Follow Shadow Pines to be notified.
+      </p>
 
 
     </div>
@@ -1686,9 +1874,9 @@ footer{
     </div>
 
 
-    <h3>
+    <h2>
       CONTACT THE TEAM
-    </h3>
+    </h2>
 
 
   </div>
@@ -1826,6 +2014,10 @@ const releaseDate =
     "2026-09-01T09:00:00+01:00"
   ).getTime();
 
+// When the pre-save or release smart link is available, add it here.
+// Example: const releaseUrl = "https://your-smart-link.example";
+const releaseUrl = "";
+
 
 function updateCountdown(){
 
@@ -1941,4 +2133,3 @@ setInterval(
 
 </body>
 </html>
-```
