@@ -12,6 +12,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<!-- Platform icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 
 :root{
@@ -301,6 +306,21 @@ h1{
   font-weight:800;
   background:#111;
   border:1px solid #333;
+  flex-shrink:0;
+}
+
+.platform-icon i{
+  font-size:19px;
+}
+
+.platform-icon .tidal-text{
+  font-size:9px;
+  letter-spacing:.02em;
+}
+
+.platform-icon .deezer-text{
+  font-size:8px;
+  letter-spacing:-.02em;
 }
 
 .stream strong{
@@ -651,9 +671,6 @@ footer{
 
   <div class="hero-copy fade">
 
-    <!-- Artist photo -->
-    <!-- Keep Logo-Foto-Perfil.png in the same folder as index.html -->
-
     <img
       class="artist-photo"
       src="./Logo-Foto-Perfil.png"
@@ -680,25 +697,28 @@ footer{
     <!-- Social media -->
 
     <nav class="socials" aria-label="Social media">
-<nav class="socials" aria-label="Social media">
 
-  <a
-    href="https://www.youtube.com/@ShadowPines-band"
-    target="_blank"
-    rel="noopener"
-    aria-label="YouTube">
-    YT
-  </a>
+      <a
+        href="https://www.youtube.com/@ShadowPines-band"
+        target="_blank"
+        rel="noopener"
+        aria-label="YouTube">
 
-  <a
-    href="https://www.instagram.com/shadowpinesband"
-    target="_blank"
-    rel="noopener"
-    aria-label="Instagram">
-    IG
-  </a>
+        <i class="fa-brands fa-youtube"></i>
 
-</nav>
+      </a>
+
+      <a
+        href="https://www.instagram.com/shadowpinesband"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram">
+
+        <i class="fa-brands fa-instagram"></i>
+
+      </a>
+
+    </nav>
 
   </div>
 
@@ -713,22 +733,12 @@ footer{
 
       <div class="video-ratio">
 
-        <!--
-        Replace VIDEO_ID with the ID of the official YouTube video.
-
-        Example:
-        https://www.youtube.com/watch?v=ABC123
-
-        Video ID:
-        ABC123
-        -->
-
         <iframe
-  src="https://www.youtube.com/embed/mLKqhcP11oY?autoplay=1&mute=1&playsinline=1&rel=0"
-  title="Shadow Pines - After The Rain"
-  allow="autoplay; encrypted-media; picture-in-picture"
-  allowfullscreen>
-</iframe>
+          src="https://www.youtube.com/embed/mLKqhcP11oY?autoplay=1&mute=1&playsinline=1&rel=0"
+          title="Shadow Pines - After The Rain"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
 
       </div>
 
@@ -775,7 +785,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        S
+        <i class="fa-brands fa-spotify"></i>
       </div>
 
       <div>
@@ -799,7 +809,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        ♪
+        <i class="fa-brands fa-apple"></i>
       </div>
 
       <div>
@@ -823,7 +833,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        ▶
+        <i class="fa-brands fa-youtube"></i>
       </div>
 
       <div>
@@ -847,7 +857,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        SC
+        <i class="fa-brands fa-soundcloud"></i>
       </div>
 
       <div>
@@ -871,7 +881,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        T
+        <span class="tidal-text">TIDAL</span>
       </div>
 
       <div>
@@ -895,7 +905,7 @@ footer{
       rel="noopener">
 
       <div class="platform-icon">
-        D
+        <span class="deezer-text">DEEZER</span>
       </div>
 
       <div>
@@ -919,14 +929,6 @@ footer{
 ========================= -->
 
 <section class="release fade">
-
-
-  <!--
-  Keep your release cover in the same folder
-  and name it:
-
-  Capa-Single-After-the-Rain.png
-  -->
 
   <img
     class="cover"
@@ -957,7 +959,9 @@ footer{
         href="https://open.spotify.com/intl-pt/artist/2Z7y9G3WkE10uy8NMJJXgH?si=kqOnjvxfQMauC9Yd1vGcjQ"
         target="_blank"
         rel="noopener">
+
         ◉ LISTEN ON SPOTIFY
+
       </a>
 
       <a
@@ -965,7 +969,9 @@ footer{
         href="https://music.apple.com/pt/song/after-the-rain/6801570997"
         target="_blank"
         rel="noopener">
+
          APPLE MUSIC
+
       </a>
 
       <a
@@ -973,7 +979,9 @@ footer{
         href="https://www.youtube.com/@ShadowPines-band"
         target="_blank"
         rel="noopener">
+
         ▶ YOUTUBE
+
       </a>
 
     </div>
@@ -984,7 +992,7 @@ footer{
 
 
 <!-- =========================
-     NEXT RELEASE
+     UPCOMING SHOWS
 ========================= -->
 
 <section class="fade">
@@ -994,14 +1002,14 @@ footer{
     style="padding-top:0">
 
     <div class="section-kicker">
-      Date
+      Tour
     </div>
 
     <div
       class="section-title"
       style="font-size:18px">
 
-      Next Release
+      Upcoming Shows
 
     </div>
 
@@ -1014,6 +1022,18 @@ footer{
       ▣
     </div>
 
+    <div>
+
+      <strong>
+        Coming Soon
+      </strong>
+
+      <span>
+        New dates will be announced soon.
+        Follow Shadow Pines on social media for updates.
+      </span>
+
+    </div>
 
   </div>
 
@@ -1029,7 +1049,7 @@ footer{
   <div>
 
     <div class="section-kicker">
-      For Contact
+      Contact the team
     </div>
 
     <h3>
@@ -1039,13 +1059,13 @@ footer{
   </div>
 
 
- <a
-  class="btn primary"
-  href="mailto:shadowpinesband@gmail.com">
+  <a
+    class="btn primary"
+    href="mailto:shadowpinesband@gmail.com">
 
-  ✈ GET IN TOUCH
+    ✈ CONTACT THE TEAM
 
-</a>
+  </a>
 
 </section>
 
