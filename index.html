@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,12 @@
 
 <title>SHADOW PINES — Band</title>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
   rel="stylesheet"
 >
 
@@ -203,14 +205,13 @@ body:after{
 }
 
 .artist-name{
-    font-family:"Cormorant Garamond",serif;
+  font-family:"Cormorant Garamond",serif;
 
-  font-size:
-    clamp(
-      32px,
-      3.5vw,
-      48px
-    );
+  font-size:clamp(
+    32px,
+    3.5vw,
+    48px
+  );
 
   color:#fff;
 
@@ -879,7 +880,7 @@ footer{
 }
 
 .logo{
-   font-family:"Cormorant Garamond",serif;
+  font-family:"Cormorant Garamond",serif;
 
   color:#fff;
 
@@ -1185,7 +1186,9 @@ footer{
   </div>
 
 
-  <!-- VIDEO -->
+  <!-- =====================================================
+       VIDEO
+  ====================================================== -->
 
   <div class="hero-video-column fade">
 
@@ -1197,9 +1200,11 @@ footer{
 
 
         <iframe
-          src="https://youtu.be/mLKqhcP11oY?si=KrQggzXL1RdgBXVr"
+          src="https://www.youtube.com/embed/mLKqhcP11oY?rel=0"
           title="Shadow Pines - Official Music Video"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>
         </iframe>
 
@@ -1227,23 +1232,29 @@ footer{
     >
 
 
-      <a
-  href="https://www.youtube.com/embed/mLKqhcP11oY"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="YouTube - Shadow Pines"
->
-  <img
-    src="https://cdn.simpleicons.org/youtube/FF0000"
-    alt="YouTube"
-  >
-</a>
+      <!-- YOUTUBE -->
 
+      <a
+        href="https://www.youtube.com/watch?v=mLKqhcP11oY"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube - Shadow Pines"
+      >
+
+        <img
+          src="https://cdn.simpleicons.org/youtube/FF0000"
+          alt="YouTube"
+        >
+
+      </a>
+
+
+      <!-- INSTAGRAM -->
 
       <a
         href="https://www.instagram.com/shadowpinesband?igsh=a3E1YnphNHB1Z3Uy"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="Shadow Pines on Instagram"
       >
 
@@ -1818,7 +1829,6 @@ const releaseDate =
 
 
 function updateCountdown(){
-
 
   const now =
     new Date().getTime();
