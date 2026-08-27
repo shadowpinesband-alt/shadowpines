@@ -2,15 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08050d">
 
-<meta
-  name="description"
-  content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock."
->
+<meta name="description"
+content="Shadow Pines — independent and anonymous band. Indie rock and alternative rock.">
 
 <title>SHADOW PINES — Music</title>
 
@@ -18,35 +15,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-  rel="stylesheet"
->
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
 
 :root{
   --bg:#050505;
   --panel:rgba(255,255,255,.055);
   --panel2:rgba(255,255,255,.085);
   --line:rgba(255,255,255,.16);
-
   --text:#fff;
   --muted:#aaa5b1;
-
   --purple:#9b35ff;
   --purple2:#6f19d8;
-
   --max:1180px;
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 *{
   box-sizing:border-box;
@@ -60,18 +44,14 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-
   font-family:Inter,Arial,sans-serif;
-
   overflow-x:hidden;
 }
 
 body:before{
   content:"";
-
   position:fixed;
   inset:0;
-
   z-index:-2;
 
   background:
@@ -80,13 +60,11 @@ body:before{
       rgba(146,42,255,.20),
       transparent 28%
     ),
-
     radial-gradient(
       circle at 15% 30%,
       rgba(92,24,170,.12),
       transparent 30%
     ),
-
     linear-gradient(
       180deg,
       #080609 0%,
@@ -96,14 +74,10 @@ body:before{
 
 body:after{
   content:"";
-
   position:fixed;
   inset:0;
-
   z-index:-1;
-
   pointer-events:none;
-
   opacity:.16;
 
   background-image:
@@ -111,7 +85,6 @@ body:after{
       rgba(255,255,255,.035) 1px,
       transparent 1px
     ),
-
     linear-gradient(
       90deg,
       rgba(255,255,255,.035) 1px,
@@ -156,17 +129,10 @@ body:after{
   padding:55px 0 55px;
 }
 
-
-/* LEFT SIDE */
-
 .hero-copy{
   display:flex;
-
   flex-direction:column;
-
   align-items:flex-start;
-
-  padding-top:0;
 }
 
 
@@ -260,72 +226,13 @@ body:after{
 
 
 /* =========================================================
-   SOCIALS
-========================================================= */
-
-.socials{
-  display:flex;
-
-  gap:22px;
-
-  margin-top:25px;
-
-  flex-wrap:wrap;
-}
-
-.socials a{
-  width:68px;
-  height:68px;
-
-  border:1px solid var(--line);
-
-  border-radius:16px;
-
-  display:grid;
-
-  place-items:center;
-
-  color:white;
-
-  text-decoration:none;
-
-  background:rgba(255,255,255,.035);
-
-  transition:.25s;
-
-  overflow:hidden;
-}
-
-.socials a:hover{
-  border-color:#a63cff;
-
-  box-shadow:
-    0 0 30px rgba(155,53,255,.30);
-
-  transform:translateY(-4px);
-}
-
-.socials img{
-  width:42px;
-  height:42px;
-
-  object-fit:contain;
-
-  display:block;
-}
-
-
-/* =========================================================
-   VIDEO SIDE
+   VIDEO
 ========================================================= */
 
 .hero-video-column{
   display:flex;
-
   flex-direction:column;
-
   align-items:stretch;
-
   padding-top:0;
 }
 
@@ -348,7 +255,6 @@ body:after{
   content:"";
 
   position:absolute;
-
   inset:0;
 
   box-shadow:
@@ -361,7 +267,6 @@ body:after{
 
 .video-ratio{
   position:relative;
-
   aspect-ratio:16/9;
 }
 
@@ -396,7 +301,7 @@ body:after{
 
 
 /* =========================================================
-   VIDEO SOCIALS
+   SOCIAL MEDIA BELOW VIDEO
 ========================================================= */
 
 .video-socials{
@@ -451,7 +356,6 @@ body:after{
 
 .section{
   text-align:center;
-
   padding:35px 0 25px;
 }
 
@@ -491,7 +395,7 @@ body:after{
 
 
 /* =========================================================
-   STREAMING
+   LISTEN NOW
 ========================================================= */
 
 .stream-grid{
@@ -617,7 +521,7 @@ body:after{
 
 
 /* =========================================================
-   NEW RELEASE
+   SILENT MAPS — NEW RELEASE
 ========================================================= */
 
 .release-section{
@@ -647,7 +551,7 @@ body:after{
 }
 
 .release-title{
-  font-size:38px;
+  font-size:42px;
 
   letter-spacing:.14em;
 
@@ -670,6 +574,49 @@ body:after{
 
 
 /* =========================================================
+   RELEASE CONTENT
+========================================================= */
+
+.release-content{
+  display:grid;
+
+  grid-template-columns:
+    280px 1fr;
+
+  gap:38px;
+
+  align-items:center;
+
+  max-width:850px;
+
+  margin:auto;
+
+  text-align:left;
+}
+
+.release-cover{
+  width:100%;
+
+  aspect-ratio:1;
+
+  object-fit:cover;
+
+  border-radius:14px;
+
+  border:1px solid var(--line);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.45);
+
+  display:block;
+}
+
+.release-info{
+  text-align:center;
+}
+
+
+/* =========================================================
    COUNTDOWN
 ========================================================= */
 
@@ -679,27 +626,29 @@ body:after{
   grid-template-columns:
     repeat(4,1fr);
 
-  gap:14px;
+  gap:12px;
 
-  max-width:720px;
+  width:100%;
 
   margin:0 auto;
 }
 
 .count-box{
-  padding:20px 12px;
+  padding:18px 8px;
 
   border:1px solid var(--line);
 
   border-radius:14px;
 
   background:rgba(255,255,255,.035);
+
+  text-align:center;
 }
 
 .count-number{
   display:block;
 
-  font-size:38px;
+  font-size:34px;
 
   line-height:1;
 
@@ -718,49 +667,25 @@ body:after{
 
   color:#999;
 
-  font-size:9px;
+  font-size:8px;
 
-  letter-spacing:.18em;
+  letter-spacing:.16em;
 
   text-transform:uppercase;
 }
 
 .release-date{
-  margin-top:25px;
+  margin-top:22px;
 
   color:#b66cff;
 
-  font-size:11px;
+  font-size:10px;
 
-  letter-spacing:.2em;
+  line-height:1.6;
+
+  letter-spacing:.15em;
 
   text-transform:uppercase;
-}
-
-
-/* =========================================================
-   RELEASE COVER PLACEHOLDER
-========================================================= */
-
-.release-cover{
-  display:none;
-
-  width:260px;
-
-  max-width:100%;
-
-  aspect-ratio:1;
-
-  object-fit:cover;
-
-  border-radius:14px;
-
-  margin:28px auto 0;
-
-  border:1px solid var(--line);
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.35);
 }
 
 
@@ -911,11 +836,9 @@ footer{
   position:fixed;
 
   right:25px;
-
   bottom:25px;
 
   width:48px;
-
   height:48px;
 
   border:1px solid var(--line);
@@ -986,6 +909,11 @@ footer{
       repeat(2,1fr);
   }
 
+  .release-content{
+    grid-template-columns:
+      230px 1fr;
+  }
+
 }
 
 
@@ -1025,10 +953,6 @@ footer{
     line-height:1.65;
   }
 
-  .socials{
-    justify-content:center;
-  }
-
   .video-socials{
     gap:18px;
   }
@@ -1047,6 +971,26 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .release-section{
+    padding:24px 15px;
+  }
+
+  .release-title{
+    font-size:30px;
+  }
+
+  .release-content{
+    grid-template-columns:1fr;
+
+    gap:25px;
+  }
+
+  .release-cover{
+    max-width:280px;
+
+    margin:auto;
+  }
+
   .countdown{
     grid-template-columns:
       repeat(2,1fr);
@@ -1054,14 +998,6 @@ footer{
 
   .count-number{
     font-size:30px;
-  }
-
-  .release-section{
-    padding:22px 15px;
-  }
-
-  .release-title{
-    font-size:28px;
   }
 
   .contact{
@@ -1106,7 +1042,6 @@ footer{
 <section class="hero">
 
 
-  <!-- LEFT -->
   <div class="hero-copy fade">
 
 
@@ -1152,7 +1087,6 @@ footer{
   </div>
 
 
-  <!-- RIGHT -->
   <div class="hero-video-column fade">
 
 
@@ -1180,8 +1114,6 @@ footer{
 
     </div>
 
-
-    <!-- SOCIALS BELOW VIDEO -->
 
     <nav
       class="video-socials"
@@ -1252,8 +1184,6 @@ footer{
   <div class="stream-grid">
 
 
-    <!-- SPOTIFY -->
-
     <a
       class="stream"
       href="https://open.spotify.com/intl-pt/artist/2Z7y9G3WkE10uy8NMJJXgH?si=kqOnjvxfQMauC9Yd1vGcjQ"
@@ -1262,30 +1192,21 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/spotify/1ED760"
           alt="Spotify"
         >
-
       </div>
 
       <div>
-
         <strong>Spotify</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
-
-    <!-- APPLE MUSIC -->
 
     <a
       class="stream"
@@ -1295,30 +1216,21 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/applemusic/FA243C"
           alt="Apple Music"
         >
-
       </div>
 
       <div>
-
         <strong>Apple Music</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
-
-    <!-- YOUTUBE MUSIC -->
 
     <a
       class="stream"
@@ -1328,30 +1240,21 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/youtubemusic/FF0000"
           alt="YouTube Music"
         >
-
       </div>
 
       <div>
-
         <strong>YouTube Music</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
-
-    <!-- DEEZER -->
 
     <a
       class="stream"
@@ -1361,30 +1264,21 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/deezer/FF0092"
           alt="Deezer"
         >
-
       </div>
 
       <div>
-
         <strong>Deezer</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
-
-    <!-- TIDAL -->
 
     <a
       class="stream"
@@ -1394,30 +1288,21 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/tidal/FFFFFF"
           alt="TIDAL"
         >
-
       </div>
 
       <div>
-
         <strong>TIDAL</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
-
-    <!-- SOUNDCLOUD -->
 
     <a
       class="stream"
@@ -1427,25 +1312,18 @@ footer{
     >
 
       <div class="platform-icon">
-
         <img
           src="https://cdn.simpleicons.org/soundcloud/FF5500"
           alt="SoundCloud"
         >
-
       </div>
 
       <div>
-
         <strong>SoundCloud</strong>
-
         <small>Listen now</small>
-
       </div>
 
-      <div class="arrow">
-        ›
-      </div>
+      <div class="arrow">›</div>
 
     </a>
 
@@ -1456,7 +1334,7 @@ footer{
 
 
 <!-- =======================================================
-     NEW RELEASE
+     SILENT MAPS — NEW RELEASE
 ======================================================= -->
 
 <section class="release-section fade">
@@ -1468,7 +1346,7 @@ footer{
 
 
   <div class="release-title">
-    COMING SOON
+    SILENT MAPS
   </div>
 
 
@@ -1477,121 +1355,116 @@ footer{
   </div>
 
 
-  <!-- COUNTDOWN -->
-
-  <div
-    class="countdown"
-    id="countdown"
-  >
+  <div class="release-content">
 
 
-    <div class="count-box">
+    <!-- RELEASE COVER -->
 
-      <span
-        class="count-number"
-        id="days"
+    <img
+      class="release-cover"
+      src="./Silent Maps.png"
+      alt="Silent Maps — Shadow Pines"
+    >
+
+
+    <div class="release-info">
+
+
+      <!-- COUNTDOWN -->
+
+      <div
+        class="countdown"
+        id="countdown"
       >
-        00
-      </span>
 
-      <span class="count-label">
-        Days
-      </span>
+
+        <div class="count-box">
+
+          <span
+            class="count-number"
+            id="days"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Days
+          </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+          <span
+            class="count-number"
+            id="hours"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Hours
+          </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+          <span
+            class="count-number"
+            id="minutes"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Minutes
+          </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+          <span
+            class="count-number"
+            id="seconds"
+          >
+            00
+          </span>
+
+          <span class="count-label">
+            Seconds
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- OUT NOW -->
+
+      <div
+        class="out-now"
+        id="outNow"
+      >
+        OUT NOW
+      </div>
+
+
+      <div class="release-date">
+
+        01 SEPTEMBER 2026 · 09:00 · LISBON TIME
+
+      </div>
+
 
     </div>
-
-
-    <div class="count-box">
-
-      <span
-        class="count-number"
-        id="hours"
-      >
-        00
-      </span>
-
-      <span class="count-label">
-        Hours
-      </span>
-
-    </div>
-
-
-    <div class="count-box">
-
-      <span
-        class="count-number"
-        id="minutes"
-      >
-        00
-      </span>
-
-      <span class="count-label">
-        Minutes
-      </span>
-
-    </div>
-
-
-    <div class="count-box">
-
-      <span
-        class="count-number"
-        id="seconds"
-      >
-        00
-      </span>
-
-      <span class="count-label">
-        Seconds
-      </span>
-
-    </div>
-
 
   </div>
-
-
-  <!-- OUT NOW -->
-
-  <div
-    class="out-now"
-    id="outNow"
-  >
-    OUT NOW
-  </div>
-
-
-  <div class="release-date">
-
-    01 SEPTEMBER 2026 · 09:00 · LISBON TIME
-
-  </div>
-
-
-  <!--
-  ==========================================================
-  FUTURE RELEASE COVER
-
-  When you have the cover, upload it to the same folder
-  as index.html and change:
-
-  display:none;
-
-  to:
-
-  display:block;
-
-  Then change the image filename below.
-
-  ==========================================================
-  -->
-
-  <img
-    class="release-cover"
-    src="./Capa-Proximo-Lancamento.png"
-    alt="Shadow Pines new release cover"
-  >
 
 
 </section>
@@ -1655,10 +1528,6 @@ footer{
 
 </main>
 
-
-<!-- =======================================================
-     BACK TO TOP
-======================================================= -->
 
 <button
   class="top"
@@ -1730,10 +1599,9 @@ document
 
 
 /* =========================================================
-   COUNTDOWN
+   SILENT MAPS COUNTDOWN
 =========================================================
 
-   RELEASE:
    September 1, 2026
    09:00 Lisbon time
 
